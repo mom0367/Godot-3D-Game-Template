@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b72lkasjvidkm"]
+
+[ext_resource type="Texture2D" uid="uid://1irkgcg7gbo1" path="res://Materials/Textures/Dirt.png" id="1_apwll"]
+
+[resource]
+albedo_color = Color(0.97002596, 0.7774758, 0.5807154, 1)
+albedo_texture = ExtResource("1_apwll")
+metallic_specular = 0.0
+uv1_triplanar = true
+metadata/Material_Group = "Dirt"

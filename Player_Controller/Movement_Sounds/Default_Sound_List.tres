@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="MaterialList" load_steps=46 format=3 uid="uid://cmiuyr0thgkuo"]
+
+[ext_resource type="AudioStream" uid="uid://0yq7npk356ga" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Dirt/Dirt_Footstep_1.wav" id="1_30ea6"]
+[ext_resource type="AudioStream" uid="uid://dxfri84fqjjbd" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Dirt/Dirt_Footstep_2.wav" id="2_env3d"]
+[ext_resource type="AudioStream" uid="uid://cb8elcsdmoyug" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Dirt/Dirt_Footstep_3.wav" id="3_ftap2"]
+[ext_resource type="AudioStream" uid="uid://1vbet6dxihb4" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Dirt/Dirt_Footstep_4.wav" id="4_g5g4r"]
+[ext_resource type="AudioStream" uid="uid://bb4rskrfjtxu7" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Dirt/Dirt_Footstep_5.wav" id="5_ea2xg"]
+[ext_resource type="AudioStream" uid="uid://pwqrc3pxu75o" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Dirt/Dirt_Footstep_6.wav" id="6_imrsa"]
+[ext_resource type="AudioStream" uid="uid://c2e464fjcbemb" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Dirt/Dirt_Footstep_7.wav" id="7_kq6dw"]
+[ext_resource type="AudioStream" uid="uid://bpu3urov22xqs" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Grass/Grass_Footstep_1.wav" id="8_v6wta"]
+[ext_resource type="AudioStream" uid="uid://dtix5g3dqldm4" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Grass/Grass_Footstep_2.wav" id="9_ax2sw"]
+[ext_resource type="AudioStream" uid="uid://dsqa2vvi4bxia" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Grass/Grass_Footstep_3.wav" id="10_hn51u"]
+[ext_resource type="AudioStream" uid="uid://3wukekx3es8g" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Grass/Grass_Footstep_4.wav" id="11_htqyq"]
+[ext_resource type="AudioStream" uid="uid://duxyxnup7tyte" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Grass/Grass_Footstep_5.wav" id="12_c6i8y"]
+[ext_resource type="AudioStream" uid="uid://cx2odleo5dqrw" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Metal/Metal_Footstep_1.wav" id="13_tn3lm"]
+[ext_resource type="AudioStream" uid="uid://cojsb15ix2ci3" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Metal/Metal_Footstep_2.wav" id="14_m3cjw"]
+[ext_resource type="AudioStream" uid="uid://rl3ruopr73nq" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Metal/Metal_Footstep_3.wav" id="15_qvjum"]
+[ext_resource type="AudioStream" uid="uid://cc10bbjfnwk8c" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Metal/Metal_Footstep_4.wav" id="16_460f8"]
+[ext_resource type="AudioStream" uid="uid://b1s0m8pm8on3v" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Metal/Metal_Footstep_5.wav" id="17_wri83"]
+[ext_resource type="AudioStream" uid="uid://cgh6pomh0jkea" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Concrete/Concrete_Footstep_1.wav" id="18_hn51u"]
+[ext_resource type="AudioStream" uid="uid://bow3shuqftw65" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Concrete/Concrete_Footstep_2.wav" id="19_htqyq"]
+[ext_resource type="AudioStream" uid="uid://dke0gus7l832s" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Concrete/Concrete_Footstep_3.wav" id="20_c6i8y"]
+[ext_resource type="AudioStream" uid="uid://cvnfxkbh03ywx" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Wood/Wood_Footstep_1.wav" id="20_jbvby"]
+[ext_resource type="AudioStream" uid="uid://go08dkckwekw" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Wood/Wood_Footstep_2.wav" id="21_48l7v"]
+[ext_resource type="AudioStream" uid="uid://k6sr6ui72ux6" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Concrete/Concrete_Footstep_4.wav" id="21_tn3lm"]
+[ext_resource type="AudioStream" uid="uid://81wo66j8c8y8" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Wood/Wood_Footstep_3.wav" id="22_jdtjm"]
+[ext_resource type="AudioStream" uid="uid://dg0vjlkpqvai8" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Concrete/Concrete_Footstep_5.wav" id="22_m3cjw"]
+[ext_resource type="AudioStream" uid="uid://bqvigk7xdfhl4" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Concrete/Concrete_Footstep_6.wav" id="23_qvjum"]
+[ext_resource type="AudioStream" uid="uid://bmgmc8m18c5p1" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Wood/Wood_Footstep_4.wav" id="23_rtcrr"]
+[ext_resource type="AudioStream" uid="uid://cadajwu0vw7pm" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Concrete/Concrete_Footstep_7.wav" id="24_460f8"]
+[ext_resource type="AudioStream" uid="uid://ccyd6wdm84tht" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Wood/Wood_Footstep_5.wav" id="24_upw7r"]
+[ext_resource type="AudioStream" uid="uid://bvriyoa3quqaj" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Wood/Wood_Footstep_6.wav" id="25_2ogyj"]
+[ext_resource type="AudioStream" uid="uid://jbshxxsuf2ej" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Concrete/Concrete_Footstep_8.wav" id="25_wri83"]
+[ext_resource type="AudioStream" uid="uid://p6g4jyxp12js" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Concrete/Concrete_Footstep_9.wav" id="26_0syvd"]
+[ext_resource type="AudioStream" uid="uid://gnaibfx6gb7n" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Wood/Wood_Footstep_7.wav" id="26_s8ymc"]
+[ext_resource type="AudioStream" uid="uid://b6ug8fq16jead" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Concrete/Concrete_Footstep_10.wav" id="27_dpqqx"]
+[ext_resource type="AudioStream" uid="uid://f7qyxyhv42c7" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Wood/Wood_Footstep_8.wav" id="27_svxgq"]
+[ext_resource type="AudioStream" uid="uid://c1006fmkl84g" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Wood/Wood_Footstep_9.wav" id="28_375jo"]
+[ext_resource type="AudioStream" uid="uid://dttgnkbj5dod0" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Concrete/Concrete_Footstep_11.wav" id="28_jbvby"]
+[ext_resource type="AudioStream" uid="uid://clgo2q4utvqgh" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Wood/Wood_Footstep_10.wav" id="29_lmkiq"]
+[ext_resource type="AudioStream" uid="uid://d0oqe3i5wn2v3" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Wood/Wood_Footstep_11.wav" id="30_kn2tq"]
+[ext_resource type="AudioStream" uid="uid://3wo23ma0n35i" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Tile/Tile_Footstep_1.wav" id="31_cw8g3"]
+[ext_resource type="AudioStream" uid="uid://b7vo63kw7uvgv" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Tile/Tile_Footstep_2.wav" id="32_00ssb"]
+[ext_resource type="AudioStream" uid="uid://cnue4dlsj1rq3" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Tile/Tile_Footstep_3.wav" id="33_ytigw"]
+[ext_resource type="AudioStream" uid="uid://cu6mix873wg30" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Tile/Tile_Footstep_4.wav" id="34_2buf0"]
+[ext_resource type="AudioStream" uid="uid://bwwhx6m5omple" path="res://Player_Controller/Movement_Sounds/Sound_Effects/Tile/Tile_Footstep_5.wav" id="35_rtcbg"]
+[ext_resource type="Script" uid="uid://i51us87oiobt" path="res://Player_Controller/MaterialList_Resource.gd" id="36_ojvxt"]
+
+[resource]
+script = ExtResource("36_ojvxt")
+fallback_soundgroup = "Wood"
+material_dictionary = Dictionary[String, Array]({
+"Dirt": [ExtResource("1_30ea6"), ExtResource("2_env3d"), ExtResource("3_ftap2"), ExtResource("4_g5g4r"), ExtResource("5_ea2xg"), ExtResource("6_imrsa"), ExtResource("7_kq6dw")],
+"Grass": [ExtResource("8_v6wta"), ExtResource("9_ax2sw"), ExtResource("10_hn51u"), ExtResource("11_htqyq"), ExtResource("12_c6i8y")],
+"Metal": [ExtResource("13_tn3lm"), ExtResource("14_m3cjw"), ExtResource("15_qvjum"), ExtResource("16_460f8"), ExtResource("17_wri83")],
+"Stone": [ExtResource("18_hn51u"), ExtResource("19_htqyq"), ExtResource("20_c6i8y"), ExtResource("21_tn3lm"), ExtResource("22_m3cjw"), ExtResource("23_qvjum"), ExtResource("24_460f8"), ExtResource("25_wri83"), ExtResource("26_0syvd"), ExtResource("27_dpqqx"), ExtResource("28_jbvby")],
+"Tile": [ExtResource("31_cw8g3"), ExtResource("32_00ssb"), ExtResource("33_ytigw"), ExtResource("34_2buf0"), ExtResource("35_rtcbg")],
+"Wood": [ExtResource("20_jbvby"), ExtResource("21_48l7v"), ExtResource("22_jdtjm"), ExtResource("23_rtcrr"), ExtResource("24_upw7r"), ExtResource("25_2ogyj"), ExtResource("26_s8ymc"), ExtResource("27_svxgq"), ExtResource("28_375jo"), ExtResource("29_lmkiq"), ExtResource("30_kn2tq")]
+})
+metadata/_custom_type_script = "uid://i51us87oiobt"

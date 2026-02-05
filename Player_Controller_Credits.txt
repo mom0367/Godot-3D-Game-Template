@@ -1,0 +1,27 @@
+All assets used here are released under CC0 or MIT-0, anything not mentioned was created by me and also licensed under CC0.
+Intended for use with the Godot game engine (Not included in this repo of course but is under MIT)
+
+
+brackeys-proto-controller -
+https://github.com/Brackeys/brackeys-proto-controller
+(A large chunk of this has been rewritten to fit a different code style, the recode is released under MIT-0 which carries the spirit of CC0 while avoiding legal complications in some regions)
+
+- Character model and animations sourced from mesh2motion
+https://app.mesh2motion.org/
+
+# Materials for example scene
+
+Retroz Prototype Grid -
+https://godotshaders.com/shader/prototype-grid/
+
+# Footstep sounds used (freesound.org)
+
+Concrete Footsteps, Tile Footsteps - Nox_Sound
+
+Wood Footsteps - Galbenshire
+
+Grass Footsteps - drowsyprincess
+
+Dirt Footsteps - FocusBay
+
+Metal Footsteps - GiocoSound

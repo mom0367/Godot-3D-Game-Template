@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://blv22y8y6uvqx"]
+
+[ext_resource type="Texture2D" uid="uid://djmgkxe2ffxpw" path="res://Materials/Textures/Tile.png" id="1_41xlu"]
+
+[resource]
+albedo_texture = ExtResource("1_41xlu")
+uv1_triplanar = true
+metadata/Material_Group = "Tile"

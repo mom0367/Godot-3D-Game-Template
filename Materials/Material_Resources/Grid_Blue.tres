@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c0dqllv5tgutr"]
+
+[ext_resource type="Shader" uid="uid://bb33qxd3w4grq" path="res://Materials/Shaders/Grid_Shader.gdshader" id="1_o4ewc"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_o4ewc")
+shader_parameter/world_uv = true
+shader_parameter/object_uv = false
+shader_parameter/object_uv_scale = Vector2(1, 1)
+shader_parameter/preset_color = 0
+shader_parameter/base_color = Color(0.38440302, 0.70795494, 0.89215523, 1)
+shader_parameter/metalic = 0.25
+shader_parameter/roughness = 0.75
+shader_parameter/grid_scale = 1.0
+shader_parameter/grid_width = 0.01
+shader_parameter/grid_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/inside_scale = 1.0
+shader_parameter/inside_width = 0.01
+shader_parameter/inside_color = Color(0.8, 0.8, 0.8, 0.8)
+shader_parameter/checkered = true
+shader_parameter/sub_checkered_grid = false
+shader_parameter/checkered_color = Color(0.879304, 0.97296673, 0.98684317, 1)
+shader_parameter/checkered_blend_color = 0.226000010735
+shader_parameter/use_inside_uv = false
+shader_parameter/use_albedo_color = false
+shader_parameter/albedo_alpha = 0.5
+metadata/Material_Group = "Stone"

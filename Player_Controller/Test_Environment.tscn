@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://xgs22y8bv2cw"]
+
+[ext_resource type="Material" uid="uid://b62bi6bjpqcmi" path="res://Materials/Material_Resources/Grid.tres" id="1_deljx"]
+[ext_resource type="Material" uid="uid://c0dqllv5tgutr" path="res://Materials/Material_Resources/Grid_Blue.tres" id="2_eh7ap"]
+[ext_resource type="PackedScene" uid="uid://dlj3g5vv72pc7" path="res://Player_Controller/Player_Character.tscn" id="3_48eap"]
+[ext_resource type="Material" uid="uid://dhp75iox4jbtw" path="res://Materials/Material_Resources/Wood_Plank.tres" id="3_eh7ap"]
+[ext_resource type="Material" uid="uid://dbjrhs0bv22rq" path="res://Materials/Material_Resources/Grass.tres" id="4_48eap"]
+[ext_resource type="Material" uid="uid://b72lkasjvidkm" path="res://Materials/Material_Resources/Ground.tres" id="5_bijhp"]
+[ext_resource type="Material" uid="uid://bbjng30mvm64" path="res://Materials/Material_Resources/Sheet_Metal.tres" id="6_6ihjg"]
+[ext_resource type="Material" uid="uid://blv22y8y6uvqx" path="res://Materials/Material_Resources/Tile.tres" id="7_dx56l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_deljx"]
+albedo_color = Color(0.37922162, 0.9988268, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6frc2"]
+sky_top_color = Color(0.31567037, 0.78453845, 0.9322208, 1)
+sky_horizon_color = Color(0.4516955, 0.84670377, 0.96652037, 1)
+ground_bottom_color = Color(0.10754537, 0.35025185, 0.4801603, 1)
+ground_horizon_color = Color(0.3928013, 0.70346344, 0.8142568, 1)
+
+[sub_resource type="Sky" id="Sky_44ri0"]
+sky_material = SubResource("ProceduralSkyMaterial_6frc2")
+
+[sub_resource type="Environment" id="Environment_c6qvu"]
+background_mode = 2
+sky = SubResource("Sky_44ri0")
+
+[node name="Node3D" type="Node3D" unique_id=549195817]
+
+[node name="Map" type="Node3D" parent="." unique_id=1325860739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Floor" type="CSGBox3D" parent="Map" unique_id=1968738334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 2.5)
+material_override = ExtResource("1_deljx")
+use_collision = true
+size = Vector3(140, 1, 140)
+
+[node name="Greenscreen" type="Node3D" parent="Map" unique_id=1892806947]
+
+[node name="Wall" type="CSGBox3D" parent="Map/Greenscreen" unique_id=1910090423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 11.25, -15.5)
+use_collision = true
+size = Vector3(30, 21.5, 1)
+material = SubResource("StandardMaterial3D_deljx")
+
+[node name="Floor" type="CSGBox3D" parent="Map/Greenscreen" unique_id=381883029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1, -5.5)
+use_collision = true
+size = Vector3(30, 1, 19)
+material = SubResource("StandardMaterial3D_deljx")
+
+[node name="Material_Samples" type="Node3D" parent="Map" unique_id=845628324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 3)
+
+[node name="Wood" type="CSGBox3D" parent="Map/Material_Samples" unique_id=237773983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 2)
+material_override = ExtResource("3_eh7ap")
+use_collision = true
+size = Vector3(4, 1, 4)
+
+[node name="Grass" type="CSGBox3D" parent="Map/Material_Samples" unique_id=1376540895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, 2)
+material_override = ExtResource("4_48eap")
+use_collision = true
+size = Vector3(4, 1, 4)
+
+[node name="Dirt" type="CSGBox3D" parent="Map/Material_Samples" unique_id=92503871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, 2)
+material_override = ExtResource("5_bijhp")
+use_collision = true
+size = Vector3(4, 1, 4)
+
+[node name="Metal" type="CSGBox3D" parent="Map/Material_Samples" unique_id=685184105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.5, 2)
+material_override = ExtResource("6_6ihjg")
+use_collision = true
+size = Vector3(4, 1, 4)
+
+[node name="Tile" type="CSGBox3D" parent="Map/Material_Samples" unique_id=682541536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.5, 2)
+material_override = ExtResource("7_dx56l")
+use_collision = true
+size = Vector3(4, 1, 4)
+
+[node name="Test_Structure" type="Node3D" parent="Map" unique_id=865442033]
+
+[node name="Wall" type="CSGBox3D" parent="Map/Test_Structure" unique_id=111330167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3.5, -15.5)
+use_collision = true
+size = Vector3(6, 6, 1)
+material = ExtResource("1_deljx")
+
+[node name="Wall2" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1656425351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, -15.5)
+use_collision = true
+size = Vector3(6, 6, 1)
+material = ExtResource("1_deljx")
+
+[node name="Wall3" type="CSGBox3D" parent="Map/Test_Structure" unique_id=444499319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, -22.5)
+use_collision = true
+size = Vector3(10, 6, 1)
+material = ExtResource("1_deljx")
+
+[node name="Wall4" type="CSGBox3D" parent="Map/Test_Structure" unique_id=447612416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 3.5, -25)
+use_collision = true
+size = Vector3(1, 6, 4)
+material = ExtResource("1_deljx")
+
+[node name="Wall5" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1401094855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3.5, -26.5)
+use_collision = true
+size = Vector3(4, 6, 1)
+material = ExtResource("1_deljx")
+
+[node name="Wall6" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1088322418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 3.5, -17)
+use_collision = true
+size = Vector3(1, 6, 2)
+material = ExtResource("1_deljx")
+
+[node name="Wall7" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1646788157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 3.5, -21)
+use_collision = true
+size = Vector3(1, 6, 2)
+material = ExtResource("1_deljx")
+
+[node name="Wall8" type="CSGBox3D" parent="Map/Test_Structure" unique_id=2065648652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 3.5, -21)
+use_collision = true
+size = Vector3(1, 6, 12)
+material = ExtResource("1_deljx")
+
+[node name="Wall9" type="CSGBox3D" parent="Map/Test_Structure" unique_id=2013050393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -19)
+use_collision = true
+size = Vector3(1, 1, 2)
+material = ExtResource("1_deljx")
+
+[node name="Wall10" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1321554481]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 5, -19)
+use_collision = true
+size = Vector3(1, 3, 2)
+material = ExtResource("1_deljx")
+
+[node name="Wall11" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1201346602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5.5, -15.5)
+use_collision = true
+size = Vector3(2, 2, 1)
+material = ExtResource("1_deljx")
+
+[node name="Outer_Walls" type="Node3D" parent="Map" unique_id=296219280]
+
+[node name="Wall" type="CSGBox3D" parent="Map/Outer_Walls" unique_id=1200107107]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.5, 21.5, 2.5)
+material_override = ExtResource("2_eh7ap")
+use_collision = true
+size = Vector3(2, 42, 140)
+
+[node name="Wall2" type="CSGBox3D" parent="Map/Outer_Walls" unique_id=589843554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.5, 21.5, 2.5)
+material_override = ExtResource("2_eh7ap")
+use_collision = true
+size = Vector3(2, 42, 140)
+
+[node name="Wall3" type="CSGBox3D" parent="Map/Outer_Walls" unique_id=1308091269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 21.5, -66.5)
+material_override = ExtResource("2_eh7ap")
+use_collision = true
+size = Vector3(136, 42, 2)
+
+[node name="Wall4" type="CSGBox3D" parent="Map/Outer_Walls" unique_id=2130098114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 21.5, 71.5)
+material_override = ExtResource("2_eh7ap")
+use_collision = true
+size = Vector3(136, 42, 2)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Map" unique_id=938238249]
+environment = SubResource("Environment_c6qvu")
+
+[node name="PlayerCharacter" parent="." unique_id=840297398 instance=ExtResource("3_48eap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+body_faces_movement = true
+hold_jump = true
+toggle_sprint = true
+toggle_crouch = true
+base_speed = 8.0
+sprint_increase = 0.65
+crouch_decrease = 0.65
+look_sensitivity = 0.75
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=251366875]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.86602545, 0, -0.86602545, 0.5, 0, 9.5, 0)
+light_energy = 0.75
+shadow_enabled = true
+directional_shadow_max_distance = 400.0

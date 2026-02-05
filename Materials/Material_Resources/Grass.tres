@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dbjrhs0bv22rq"]
+
+[ext_resource type="Texture2D" uid="uid://smo6og55lupr" path="res://Materials/Textures/Grasslowres.png" id="1_e5sso"]
+
+[resource]
+albedo_texture = ExtResource("1_e5sso")
+metallic_specular = 0.17
+uv1_triplanar = true
+metadata/Material_Group = "Grass"
