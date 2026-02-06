@@ -40,7 +40,6 @@ func _process(_delta: float) -> void:
 			tween_debounce = false
 	elif tween_debounce == false:
 		if (not Input.is_action_pressed(player.mapped_inputs["crouch"]) and player.toggle_crouch == false) or (Input.is_action_just_pressed(player.mapped_inputs["crouch"]) and player.toggle_crouch == true):
-			tween_debounce = true
 			#Raycast setup
 			var space_state : PhysicsDirectSpaceState3D = player.get_world_3d().direct_space_state
 			var query : PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(player.global_position, (player.global_position  + Vector3(0, +raycast_length, 0)))
@@ -48,15 +47,17 @@ func _process(_delta: float) -> void:
 			#Stops player from uncrouching if under an obstacle
 			if result:
 				if result.collider:
-					return 
-			#print("Crouching disabled")
-			player.crouching = false
-			if tween:
-				tween.kill()
-			tween = create_tween().set_trans(easing_type)
-			tween.tween_property(collider, "position:y", collider.position.y + (collider_drop_distance * 0.5), player.crouch_animation_time)
-			tween.tween_property(collider.get_shape(), "height", (collider.get_shape().height + collider_drop_distance), player.crouch_animation_time)
-			tween.tween_property(camera, "v_offset", camera.v_offset + head_drop_distance, player.crouch_animation_time)
-			player.stored_crouch_state = false
-			await tween.finished
-			tween_debounce = false
+					pass
+					#print("Collider found, won't uncrouch.")
+			else:
+				tween_debounce = true
+				player.crouching = false
+				if tween:
+					tween.kill()
+				tween = create_tween().set_trans(easing_type)
+				tween.tween_property(collider, "position:y", collider.position.y + (collider_drop_distance * 0.5), player.crouch_animation_time)
+				tween.tween_property(collider.get_shape(), "height", (collider.get_shape().height + collider_drop_distance), player.crouch_animation_time)
+				tween.tween_property(camera, "v_offset", camera.v_offset + head_drop_distance, player.crouch_animation_time)
+				player.stored_crouch_state = false
+				await tween.finished
+				tween_debounce = false
