@@ -2,7 +2,7 @@
 
 Multipurpose character controller for 3D games, hopefully with more features than you actually need.
 
-Features:
+Controller Features:
 	* Third and first person, with two ways of moving in third person
 	* Keyboard and Controller support (No mobile as of now)
 	* Basic character movement (walking, sprinting, crouching) with a large amount of included adjustable variables.
@@ -31,3 +31,5 @@ Additional notes:
 	Low priority:
 		* Procedural animations
 		* Original player model
+
+For use with the Godot engine, not officially related to Godot or any of its creators of course.
