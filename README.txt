@@ -1,6 +1,6 @@
 (This project is still a heavy work-in-progress, expect missing features and breaking changes)
 
-Multipurpose character controller for 3D games, hopefully with more features than you actually need.
+Multipurpose character controller and game template for 3D games that involve moving a character body around, hopefully with more features than you actually need.
 
 Controller Features:
 	* Third and first person, with two ways of moving in third person
