@@ -18,6 +18,7 @@ config/name="3D Game Template"
 config/tags=PackedStringArray("asset_repository")
 run/main_scene="uid://xgs22y8bv2cw"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="uid://ek0hwa3cvjpq"
 
 [debug]
 
