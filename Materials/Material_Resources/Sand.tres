@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://jy3c3nu7wsqa"]
+
+[ext_resource type="Texture2D" uid="uid://bbct002awqgpc" path="res://Materials/Textures/Carpet.png" id="1_x5s61"]
+
+[resource]
+albedo_color = Color(0.96100014, 0.9305988, 0.4610104, 1)
+albedo_texture = ExtResource("1_x5s61")
+metallic_specular = 0.17
+uv1_triplanar = true
+metadata/Material_Group = "Sand"

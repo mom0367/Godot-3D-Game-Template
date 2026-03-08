@@ -5,10 +5,11 @@ Multipurpose character controller and game template for 3D games that involve mo
 Controller Features:
 	* Third and first person, with two ways of moving in third person
 	* Keyboard and Controller support (No mobile as of now)
-	* Basic character movement (walking, sprinting, crouching) with a large amount of included adjustable variables.
+	* Basic character movement (walking, sprinting, crouching, swimming) with a large amount of included adjustable variables.
 	* Animated and modeled characters (Credit to the wonderful people working on Mesh2Motion)
 	* Material-based movement sound system with included effects and materials
-	* Movement bobbing (Can be disabled)
+	* Basic water logic for player and movement sounds
+	* Head bobbing (Can be disabled)
 
 Additional notes:
 	
@@ -20,8 +21,8 @@ Additional notes:
 (NOT IMPLEMENTED) Future plans:
 	
 	High priority:
+		* Basic interaction system
 		* Footstep particle support
-		* Water logic
 		* Coyote time
 		
 	* Medium priority:
@@ -31,5 +32,9 @@ Additional notes:
 	Low priority:
 		* Procedural animations
 		* Original player model
+		
+Known bugs:
+	* Movement sounds don't play sometimes
+	* Zooming camera out on controller behaves oddly
 
 For use with the Godot engine, not officially related to Godot or any of its creators of course.

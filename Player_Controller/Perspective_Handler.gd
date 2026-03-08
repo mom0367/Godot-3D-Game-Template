@@ -7,10 +7,11 @@ extends Node
 @export var max_dolly : float = 5
 @export var dolly_change_sensitivity : float = 50
 @export var hide_model_in_first_person : bool = true
-@export var head : Node3D
 
-@onready var camera_spring : SpringArm3D = self.get_parent().get_parent()
+
+
 @onready var camera : Camera3D = self.get_parent() 
+@onready var head : SpringArm3D = self.get_parent().get_parent()
 
 #The amount of zoom when zooming in that will snap the player into first person, to avoid clipping
 @onready var first_person_threshold : float = 1
@@ -22,8 +23,11 @@ extends Node
 @onready var mapped_inputs : Dictionary = player_main.mapped_inputs
 
 func _ready() -> void:
+	
+	#Sets this on start so player can be dragged around easier
+	head.top_level = true
 
-	camera_spring.add_excluded_object(player_main)
+	head.add_excluded_object(player_main)
 	
 	look_rotation.y = player_main.rotation.y
 	look_rotation.x = head.rotation.x
@@ -79,7 +83,7 @@ func _process(delta: float) -> void:
 		
 	camera_dolly += camera_dolly_change
 	camera_dolly = clampf(camera_dolly, default_camera_position.z, max_dolly)
-	camera_spring.spring_length = camera_dolly 
+	head.spring_length = camera_dolly 
 	#print(camera_dolly_change)
 	#print(camera_dolly)
 	#endregion

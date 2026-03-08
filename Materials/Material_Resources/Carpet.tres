@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://sktsuemfs38p"]
+
+[ext_resource type="Texture2D" uid="uid://bbct002awqgpc" path="res://Materials/Textures/Carpet.png" id="1_nlngd"]
+
+[resource]
+albedo_color = Color(0.69965345, 0.69965345, 0.69965345, 1)
+albedo_texture = ExtResource("1_nlngd")
+metallic_specular = 0.17
+uv1_triplanar = true
+metadata/Material_Group = "Carpet"

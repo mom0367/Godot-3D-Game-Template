@@ -14,9 +14,12 @@ https://app.mesh2motion.org/
 Retroz Prototype Grid -
 https://godotshaders.com/shader/prototype-grid/
 
+Water shader - 
+https://godotshaders.com/shader/water-shader-2/
+
 # Footstep sounds used (freesound.org)
 
-Concrete Footsteps, Tile Footsteps - Nox_Sound
+Concrete Footsteps, Tile Footsteps, Sand Footsteps, Snow Footsteps, Water movement - Nox_Sound
 
 Wood Footsteps - Galbenshire
 
@@ -25,3 +28,5 @@ Grass Footsteps - drowsyprincess
 Dirt Footsteps - FocusBay
 
 Metal Footsteps - GiocoSound
+
+Carpet Footsteps - Yuval

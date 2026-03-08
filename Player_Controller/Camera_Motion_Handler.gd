@@ -1,7 +1,7 @@
 extends Node
 @onready var camera_offset : Vector3 = Vector3.ZERO
 @onready var camera : Camera3D = self.get_parent()
-@export var physics_body : PhysicsBody3D
+@onready var physics_body : PhysicsBody3D = self.get_parent().get_parent().get_parent()
 
 @export var bobbing_enabled : bool = true
 @export var horizontal_intensity : float = .20

@@ -21,24 +21,27 @@ extends Node
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	#Swim down code #TODO doesn't work	
+	if (player.swimming or player.floating) and Input.is_action_pressed(player.mapped_inputs["crouch"]):
+		player.velocity.y -= (player.jump_power * 0.01)
+	
 	#Debounce to stop crouch from getting slowly offset
 	if player.stored_crouch_state == false and tween_debounce == false:
-		
 		if (Input.is_action_pressed(player.mapped_inputs["crouch"]) and player.toggle_crouch == false) or (Input.is_action_just_pressed(player.mapped_inputs["crouch"]) and player.toggle_crouch == true):
-			#print("Crouching enabled")
-			tween_debounce = true
-			player.crouching = true
-			tween = create_tween().set_trans(easing_type)
-			tween.tween_property(collider, "position:y", collider.position.y - (collider_drop_distance * 0.5), player.crouch_animation_time)
-			tween.tween_property(collider.get_shape(), "height", (collider.get_shape().height - collider_drop_distance), player.crouch_animation_time)
-			#Adjusts camera offset as setting the position directly interferes with the perspective script.
-			tween.tween_property(camera, "v_offset", camera.v_offset - head_drop_distance, player.crouch_animation_time)
-
-
-			player.stored_crouch_state = true
-			await tween.finished
-			tween_debounce = false
-	elif tween_debounce == false:
+			if ((not player.swimming and not player.floating) or (player.swimming and player.is_on_floor())):
+				#print("Crouching enabled")
+				tween_debounce = true
+				player.crouching = true
+				tween = create_tween().set_trans(easing_type)
+				tween.tween_property(collider, "position:y", collider.position.y - (collider_drop_distance * 0.5), player.crouch_animation_time)
+				tween.tween_property(collider.get_shape(), "height", (collider.get_shape().height - collider_drop_distance), player.crouch_animation_time)
+				#Adjusts camera offset as setting the position directly interferes with the perspective script.
+				tween.tween_property(camera, "v_offset", camera.v_offset - head_drop_distance, player.crouch_animation_time)
+				player.stored_crouch_state = true
+				await tween.finished
+				tween_debounce = false
+	elif tween_debounce == false and player.stored_crouch_state == true:
 		if (not Input.is_action_pressed(player.mapped_inputs["crouch"]) and player.toggle_crouch == false) or (Input.is_action_just_pressed(player.mapped_inputs["crouch"]) and player.toggle_crouch == true):
 			#Raycast setup
 			var space_state : PhysicsDirectSpaceState3D = player.get_world_3d().direct_space_state
