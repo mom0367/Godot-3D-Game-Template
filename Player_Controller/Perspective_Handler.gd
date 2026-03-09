@@ -52,18 +52,19 @@ func _process(delta: float) -> void:
 	#region Camera in and out
 	var current_dolly_sensitvity : float = dolly_change_sensitivity 
 	
-	if Input.is_action_pressed("zoom_in") or Input.is_action_pressed("zoom_out"): #Lowers dolly sensitivity when a button is pressed, compared to a scroll
+	#TODO these are not referring to the input map
+	if Input.is_action_pressed("Zoom_In") or Input.is_action_pressed("Zoom_Out"): #Lowers dolly sensitivity when a button is pressed, compared to a scroll
 		current_dolly_sensitvity *= .1
 	
 	if not player_main.camera_control_allowed:
 		return
 	
 	var camera_dolly_change : float = 0
-	if Input.is_action_just_released("zoom_in") or Input.is_action_pressed("zoom_in"):
+	if Input.is_action_just_released("Zoom_In") or Input.is_action_pressed("Zoom_In"):
 		#print("Move camera in")
 		camera_dolly_change += (-current_dolly_sensitvity * delta)
 			
-	if Input.is_action_just_released("zoom_out") or Input.is_action_pressed("zoom_out"):
+	if Input.is_action_just_released("Zoom_Out") or Input.is_action_pressed("Zoom_Out"):
 		#print("Move camera out")
 		var additional : float = 0
 		if camera_dolly < first_person_threshold:

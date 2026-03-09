@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 	
 	#Swim down code #TODO doesn't work	
 	if (player.swimming or player.floating) and Input.is_action_pressed(player.mapped_inputs["crouch"]):
-		player.velocity.y -= (player.jump_power * 0.01)
+		player.velocity.y -= (player.jump_power * 0.02)
 	
 	#Debounce to stop crouch from getting slowly offset
 	if player.stored_crouch_state == false and tween_debounce == false:

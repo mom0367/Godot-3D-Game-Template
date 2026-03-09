@@ -10,6 +10,7 @@ Controller Features:
 	* Material-based movement sound system with included effects and materials
 	* Basic water logic for player and movement sounds
 	* Head bobbing (Can be disabled)
+	* (Extremely basic) interaction system
 
 Additional notes:
 	

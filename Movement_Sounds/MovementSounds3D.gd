@@ -1,7 +1,7 @@
 #BUG Footsteps don't play sometimes, but I have no way to consistently replicate it.
 
 @icon("uid://bnata7fjyrdg7")
-class_name Movement_Sounds_3D
+class_name MovementSounds3D
 
 extends AudioStreamPlayer3D
 

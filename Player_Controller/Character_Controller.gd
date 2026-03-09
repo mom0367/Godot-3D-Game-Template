@@ -52,7 +52,7 @@ extends CharacterBody3D
 @export var acceleration : float = 25
 @export var air_acceleration : float = 35
 
-## The clamp for the most speed a player can achieve, too low of values may cause players to move faster diagonally for some reason.
+## Soft clamp for velocity, can be exceeded but counterfources will be applied.
 @export var max_speed : float = 30
 @export var look_sensitivity : float = 0.002
 @export var max_vertical_look_angle : float = 85
@@ -64,20 +64,20 @@ signal landed
 @export_group("Inputs")
 @export var mapped_inputs : Dictionary [String, String] = {
 	
-	"left": "ui_left",
-	"right": "ui_right",
-	"forward": "ui_up",
-	"backward": "ui_down",
-	"jump": "ui_accept",
-	"sprint": "sprint",
-	"noclip": "noclip",
-	"crouch": "crouch",
-	"look_up": "ui_up",
-	"look_down": "ui_down",
-	"look_left": "ui_left",
-	"look_right": "ui_right",
-	"zoom_out": "zoom_out",
-	"zoom_in": "zoom_in"
+	"left": "Move_Left",
+	"right": "Move_Right",
+	"forward": "Move_Forward",
+	"backward": "Move_Backward",
+	"jump": "Jump",
+	"sprint": "Sprint",
+	"noclip": "Noclip",
+	"crouch": "Crouch",
+	"look_up": "Look_Up",
+	"look_down": "Look_Down",
+	"look_left": "Look_Left",
+	"look_right": "Look_Right",
+	"zoom_out": "Zoom_Out",
+	"zoom_in": "Zoom_In"
 	
 }
 ## Object references
@@ -124,18 +124,19 @@ func _physics_process(delta: float) -> void:
 				jumped.emit()
 				jumping = true
 		elif swimming or floating:
-
-			#Float upwards
 			if Input.is_action_pressed(mapped_inputs["jump"]):
-				velocity.y += (jump_power * 0.015)
+				if noclipping:
+					velocity.y += (jump_power * 0.05)
+				else:
+					#Float upwards
+					velocity.y += (jump_power * 0.015)
+					
 		
 		#Apply gravity to velocity
 		if gravity_affected:
-			if swimming and sinks_in_water:
-				#TODO not sinking any faster
-				#print(get_gravity() * 0.001)
-				velocity += (get_gravity() * 0.01) * delta
-			elif not is_on_floor():
+			if swimming and sinks_in_water and not noclipping:
+				velocity += (get_gravity() * 0.05) * delta
+			elif not is_on_floor() and not floating:
 				velocity += get_gravity() * delta
 				
 		
@@ -158,6 +159,10 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor() and not swimming:
 			current_acceleration = air_acceleration
 			crouch_slow = 0
+		elif noclipping:
+			current_acceleration = 1000
+			crouch_slow = 0
+			friction = 5000
 
 		
 		var movement_vector : Vector3
@@ -175,11 +180,12 @@ func _physics_process(delta: float) -> void:
 			movement_vector = (transform.basis * Vector3(input_direction.x, 0, input_direction.y))
 
 		#print(movement_vector)
-		if movement_vector and (floating or swimming): #TODO rewrite float, make use acceleration just like everything else
-			var motion := (head.global_basis * Vector3(input_direction.x, 0, input_direction.y))
-			#velocity = lerp(velocity, motion * base_speed * (base_speed_multiplier - base_slow) * speed_multiplier, current_acceleration * friction * delta)
-			#TODO this sucks
-			velocity = velocity.move_toward(motion * base_speed * (base_speed_multiplier - base_slow) * speed_multiplier, current_acceleration * friction * delta)
+		if movement_vector and (floating or swimming):
+			movement_vector = (head.global_basis * Vector3(input_direction.x, 0, input_direction.y))
+			#Workaround for moving cancelling y velocity, there is probably a better way to do this.
+			var stored_vel_y : float = velocity.y
+			velocity = velocity.move_toward(movement_vector * base_speed * (base_speed_multiplier - base_slow) * speed_multiplier, current_acceleration * friction * delta)
+			velocity.y = stored_vel_y
 		elif movement_vector:
 			velocity.x = move_toward(velocity.x, movement_vector.x * base_speed * (base_speed_multiplier - base_slow) * speed_multiplier, current_acceleration * friction * delta)
 			velocity.z = move_toward(velocity.z, movement_vector.z * base_speed * (base_speed_multiplier - base_slow) * speed_multiplier, current_acceleration * friction * delta)
@@ -187,10 +193,22 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, friction * delta)
 			velocity.z = move_toward(velocity.z, 0, friction * delta)
 		
-			
-		velocity.x = clamp(velocity.x, -max_speed, max_speed) #(current_friction * delta)
-		velocity.z = clamp(velocity.z, -max_speed, max_speed)
-		velocity.y = clamp(velocity.y, -max_speed, max_speed)
+		#Vertical friction to prevent sliding in noclip
+		#velocity.y = move_toward(velocity.y, 0, (friction * 0.01) * delta)
+		
+		##Hard speed capping
+		#velocity.x = clamp(velocity.x, -max_speed, max_speed)
+		#velocity.z = clamp(velocity.z, -max_speed, max_speed)
+		#velocity.y = clamp(velocity.y, -max_speed, max_speed)
+		##Soft speed capping
+		if velocity.x > max_speed:
+			velocity.x -= (friction * delta)
+		if velocity.y > max_speed:
+			velocity.y -= (friction * delta)
+		elif noclipping:
+			velocity.y = move_toward(velocity.y, 0, 11 * delta)
+		if velocity.z > max_speed:
+			velocity.z -= (friction * delta)
 		#print(velocity.length())
 				
 	else:
