@@ -1,4 +1,4 @@
-(This project is still a heavy work-in-progress, expect missing features and breaking changes)
+(This project is still a heavy work-in-progress, expect missing features, breaking changes, and a lack of polish) (Current version 0.2.2)
 
 Multipurpose character controller and game template for 3D games that involve moving a character body around, hopefully with more features than you actually need.
 
@@ -36,6 +36,5 @@ Additional notes:
 		
 Known bugs:
 	* Movement sounds don't play sometimes
-	* Zooming camera out on controller behaves oddly
-
+	
 For use with the Godot engine, not officially related to Godot or any of its creators of course.

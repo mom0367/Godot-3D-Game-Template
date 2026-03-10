@@ -64,20 +64,20 @@ signal landed
 @export_group("Inputs")
 @export var mapped_inputs : Dictionary [String, String] = {
 	
-	"left": "Move_Left",
-	"right": "Move_Right",
-	"forward": "Move_Forward",
-	"backward": "Move_Backward",
-	"jump": "Jump",
-	"sprint": "Sprint",
-	"noclip": "Noclip",
-	"crouch": "Crouch",
-	"look_up": "Look_Up",
-	"look_down": "Look_Down",
-	"look_left": "Look_Left",
-	"look_right": "Look_Right",
-	"zoom_out": "Zoom_Out",
-	"zoom_in": "Zoom_In"
+	"Left": "Move_Left",
+	"Right": "Move_Right",
+	"Forward": "Move_Forward",
+	"Backward": "Move_Backward",
+	"Jump": "Jump",
+	"Sprint": "Sprint",
+	"Noclip": "Noclip",
+	"Crouch": "Crouch",
+	"Look_Up": "Look_Up",
+	"Look_Down": "Look_Down",
+	"Look_Left": "Look_Left",
+	"Look_Right": "Look_Right",
+	"Zoom_Out": "Zoom_Out",
+	"Zoom_In": "Zoom_In"
 	
 }
 ## Object references
@@ -98,7 +98,7 @@ func _ready() -> void:
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Toggle noclip mode
-	if noclip_allowed and Input.is_action_just_pressed(mapped_inputs["noclip"]):
+	if noclip_allowed and Input.is_action_just_pressed(mapped_inputs["Noclip"]):
 		if not noclipping:
 			enable_noclip()
 		else:
@@ -115,16 +115,16 @@ func _physics_process(delta: float) -> void:
 		
 		# Apply jump velocity
 		if jump_allowed and is_on_floor() and not swimming and not floating:
-			if Input.is_action_just_pressed(mapped_inputs["jump"]):
+			if Input.is_action_just_pressed(mapped_inputs["Jump"]):
 				velocity.y += jump_power
 				jumped.emit()
 				jumping = true
-			elif Input.is_action_pressed(mapped_inputs["jump"]) and hold_jump == true:
+			elif Input.is_action_pressed(mapped_inputs["Jump"]) and hold_jump == true:
 				velocity.y += jump_power
 				jumped.emit()
 				jumping = true
 		elif swimming or floating:
-			if Input.is_action_pressed(mapped_inputs["jump"]):
+			if Input.is_action_pressed(mapped_inputs["Jump"]):
 				if noclipping:
 					velocity.y += (jump_power * 0.05)
 				else:
@@ -140,7 +140,7 @@ func _physics_process(delta: float) -> void:
 				velocity += get_gravity() * delta
 				
 		
-		var input_direction : Vector2 = Input.get_vector(mapped_inputs["left"], mapped_inputs["right"], mapped_inputs["forward"], mapped_inputs["backward"])
+		var input_direction : Vector2 = Input.get_vector(mapped_inputs["Left"], mapped_inputs["Right"], mapped_inputs["Forward"], mapped_inputs["Backward"])
 		
 		if is_on_floor():
 			if strafing_allowed == false:

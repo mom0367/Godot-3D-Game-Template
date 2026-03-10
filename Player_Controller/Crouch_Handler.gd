@@ -23,12 +23,12 @@ extends Node
 func _process(_delta: float) -> void:
 	
 	#Swim down code #TODO doesn't work	
-	if (player.swimming or player.floating) and Input.is_action_pressed(player.mapped_inputs["crouch"]):
+	if (player.swimming or player.floating) and Input.is_action_pressed(player.mapped_inputs["Crouch"]):
 		player.velocity.y -= (player.jump_power * 0.02)
 	
 	#Debounce to stop crouch from getting slowly offset
 	if player.stored_crouch_state == false and tween_debounce == false:
-		if (Input.is_action_pressed(player.mapped_inputs["crouch"]) and player.toggle_crouch == false) or (Input.is_action_just_pressed(player.mapped_inputs["crouch"]) and player.toggle_crouch == true):
+		if (Input.is_action_pressed(player.mapped_inputs["Crouch"]) and player.toggle_crouch == false) or (Input.is_action_just_pressed(player.mapped_inputs["Crouch"]) and player.toggle_crouch == true):
 			if ((not player.swimming and not player.floating) or (player.swimming and player.is_on_floor())):
 				#print("Crouching enabled")
 				tween_debounce = true
@@ -42,7 +42,7 @@ func _process(_delta: float) -> void:
 				await tween.finished
 				tween_debounce = false
 	elif tween_debounce == false and player.stored_crouch_state == true:
-		if (not Input.is_action_pressed(player.mapped_inputs["crouch"]) and player.toggle_crouch == false) or (Input.is_action_just_pressed(player.mapped_inputs["crouch"]) and player.toggle_crouch == true):
+		if (not Input.is_action_pressed(player.mapped_inputs["Crouch"]) and player.toggle_crouch == false) or (Input.is_action_just_pressed(player.mapped_inputs["Crouch"]) and player.toggle_crouch == true):
 			#Raycast setup
 			var space_state : PhysicsDirectSpaceState3D = player.get_world_3d().direct_space_state
 			var query : PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(player.global_position, (player.global_position  + Vector3(0, +raycast_length, 0)))

@@ -53,18 +53,18 @@ func _process(delta: float) -> void:
 	var current_dolly_sensitvity : float = dolly_change_sensitivity 
 	
 	#TODO these are not referring to the input map
-	if Input.is_action_pressed("Zoom_In") or Input.is_action_pressed("Zoom_Out"): #Lowers dolly sensitivity when a button is pressed, compared to a scroll
+	if Input.is_action_pressed(mapped_inputs["Zoom_In"]) or Input.is_action_pressed(mapped_inputs["Zoom_In"]): #Lowers dolly sensitivity when a button is pressed, compared to a scroll
 		current_dolly_sensitvity *= .1
 	
 	if not player_main.camera_control_allowed:
 		return
 	
 	var camera_dolly_change : float = 0
-	if Input.is_action_just_released("Zoom_In") or Input.is_action_pressed("Zoom_In"):
+	if Input.is_action_just_released(mapped_inputs["Zoom_In"]) or Input.is_action_pressed(mapped_inputs["Zoom_In"]):
 		#print("Move camera in")
-		camera_dolly_change += (-current_dolly_sensitvity * delta)
+		camera_dolly_change += (-current_dolly_sensitvity * 1.5 * delta)
 			
-	if Input.is_action_just_released("Zoom_Out") or Input.is_action_pressed("Zoom_Out"):
+	if Input.is_action_just_released(mapped_inputs["Zoom_Out"]) or Input.is_action_pressed(mapped_inputs["Zoom_Out"]):
 		#print("Move camera out")
 		var additional : float = 0
 		if camera_dolly < first_person_threshold:
@@ -101,8 +101,8 @@ func _process(delta: float) -> void:
 	# Look around
 
 		
-	if Input.is_action_pressed(mapped_inputs["look_left"]) or Input.is_action_pressed(mapped_inputs["look_right"]) or Input.is_action_pressed(mapped_inputs["look_up"]) or Input.is_action_pressed(mapped_inputs["look_down"]):
-		var look_vector : Vector2 = Input.get_vector(mapped_inputs["look_left"], mapped_inputs["look_right"], mapped_inputs["look_up"], mapped_inputs["look_down"])
+	if Input.is_action_pressed(mapped_inputs["Look_Left"]) or Input.is_action_pressed(mapped_inputs["Look_Right"]) or Input.is_action_pressed(mapped_inputs["Look_Up"]) or Input.is_action_pressed(mapped_inputs["Look_Down"]):
+		var look_vector : Vector2 = Input.get_vector(mapped_inputs["Look_Left"], mapped_inputs["Look_Right"], mapped_inputs["Look_Up"], mapped_inputs["Look_Down"])
 		rotate_look(look_vector, player_main.look_sensitivity * 35, delta)
 			
 			
