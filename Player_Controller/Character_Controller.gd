@@ -38,7 +38,6 @@ extends CharacterBody3D
 @onready var crouching : bool = false
 
 @export_group("Attributes")
-@export var jump_power : float = 4.5
 @export var base_speed : float = 7.0
 @export var sprint_increase : float = 0.25
 @export var crouch_speed_decrease : float = 0.15
@@ -51,6 +50,13 @@ extends CharacterBody3D
 @export var friction : float = 25
 @export var acceleration : float = 25
 @export var air_acceleration : float = 35
+@export var jump_power : float = 4.5
+#Amount of times a player can jump
+@export var max_jumps : int = 1
+@onready var jumps_remaining : int
+##Time where the player is still allowed to jump after leaving a platform
+@export var coyote_time : float = 0.1
+@onready var coyote_time_timer : float
 
 ## Soft clamp for velocity, can be exceeded but counterfources will be applied.
 @export var max_speed : float = 30
@@ -93,7 +99,9 @@ signal landed
 
 
 func _ready() -> void:
-
+	
+	jumps_remaining = max_jumps
+	coyote_time_timer = coyote_time
 	check_mappings()
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -105,22 +113,23 @@ func _unhandled_input(_event: InputEvent) -> void:
 			disable_noclip()
 
 func _physics_process(delta: float) -> void:
+	
+	coyote_time_timer -= delta
 		
 	if is_on_floor():
 		jumping = false
 		landed.emit()
+		jumps_remaining = max_jumps
+		coyote_time_timer = coyote_time
 		
 	# Changes velocity to move the player
 	if movement_allowed:
 		
 		# Apply jump velocity
-		if jump_allowed and is_on_floor() and not swimming and not floating:
-			if Input.is_action_just_pressed(mapped_inputs["Jump"]):
+		if jump_allowed and (is_on_floor() or coyote_time_timer > 0 or jumps_remaining > 0) and not swimming and not floating:
+			if (Input.is_action_just_pressed(mapped_inputs["Jump"]) or (Input.is_action_pressed(mapped_inputs["Jump"]) and hold_jump == true)):
 				velocity.y += jump_power
-				jumped.emit()
-				jumping = true
-			elif Input.is_action_pressed(mapped_inputs["Jump"]) and hold_jump == true:
-				velocity.y += jump_power
+				jumps_remaining -= 1
 				jumped.emit()
 				jumping = true
 		elif swimming or floating:
@@ -197,9 +206,9 @@ func _physics_process(delta: float) -> void:
 		#velocity.y = move_toward(velocity.y, 0, (friction * 0.01) * delta)
 		
 		##Hard speed capping
-		#velocity.x = clamp(velocity.x, -max_speed, max_speed)
-		#velocity.z = clamp(velocity.z, -max_speed, max_speed)
-		#velocity.y = clamp(velocity.y, -max_speed, max_speed)
+		velocity.x = clamp(velocity.x, -max_speed, max_speed)
+		velocity.z = clamp(velocity.z, -max_speed, max_speed)
+		velocity.y = clamp(velocity.y, -max_speed, max_speed)
 		##Soft speed capping
 		if velocity.x > max_speed:
 			velocity.x -= (friction * delta)

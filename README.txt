@@ -20,13 +20,9 @@ Additional notes:
 	
 
 (NOT IMPLEMENTED) Future plans:
-	
-	High priority:
-		* Basic interaction system
-		* Footstep particle support
-		* Coyote time
-		
+
 	* Medium priority:
+		* Footstep particle support
 		* Sliding, wallrunning, climbing/mantling
 		* More included material sounds
 		

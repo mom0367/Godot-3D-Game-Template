@@ -12,6 +12,8 @@
 [ext_resource type="Material" uid="uid://dh6rgbeed2q8t" path="res://Materials/Material_Resources/Water.tres" id="8_c4gku"]
 [ext_resource type="Material" uid="uid://va184d5c08w6" path="res://Materials/Material_Resources/Snow.tres" id="8_stgrx"]
 [ext_resource type="PackedScene" uid="uid://dlj3g5vv72pc7" path="res://Player_Controller/Player_Character.tscn" id="10_dbicm"]
+[ext_resource type="Script" uid="uid://0dshjlj57bxm" path="res://Interactor_System/Interactable3D.gd" id="12_3jc3u"]
+[ext_resource type="PackedScene" uid="uid://bx5u3273kdyj0" path="res://Interactor_System/Interaction_UI.tscn" id="14_stgrx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_deljx"]
 albedo_color = Color(0.37922162, 0.9988268, 0, 1)
@@ -49,14 +51,19 @@ subdivide_width = 4
 subdivide_height = 4
 subdivide_depth = 4
 
-[sub_resource type="Gradient" id="Gradient_3jc3u"]
-offsets = PackedFloat32Array(0.14919356, 0.1733871)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jc3u"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_stgrx"]
-gradient = SubResource("Gradient_3jc3u")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
+[sub_resource type="GDScript" id="GDScript_stgrx"]
+resource_name = "Interactable_Example"
+script/source = "extends CSGBox3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$Interactable3D.interacted.connect(func() -> void: material.albedo_color = Color(0.250, 0.65, 1.0, 1.0))
+"
 
 [node name="Test_Environment" type="Node3D" unique_id=187425105]
 
@@ -292,6 +299,24 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Water_Volumes/Water_Volume4/Area3D" unique_id=193276903]
 shape = SubResource("BoxShape3D_8hw4u")
 
+[node name="Interactable_Example" type="CSGBox3D" parent="Map" unique_id=2079764861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 1, -0.5)
+use_collision = true
+material = SubResource("StandardMaterial3D_3jc3u")
+script = SubResource("GDScript_stgrx")
+
+[node name="Label3D" type="Label3D" parent="Map/Interactable_Example" unique_id=1309668095]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1.5, 0)
+text = "Awesome cube that 
+turns blue when you 
+interact with it"
+
+[node name="Interactable3D" type="VisibleOnScreenNotifier3D" parent="Map/Interactable_Example" unique_id=25968652]
+aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
+script = ExtResource("12_3jc3u")
+max_distance = 5.0
+metadata/_custom_type_script = "uid://0dshjlj57bxm"
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=251366875]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.86602545, 0, -0.86602545, 0.5, 0, 9.5, 0)
 shadow_enabled = true
@@ -305,25 +330,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
 [node name="Player_Spawner" type="MultiplayerSpawner" parent="." unique_id=1529968100]
 spawn_path = NodePath("../Players")
 
-[node name="Control" type="Control" parent="." unique_id=2075839300]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CrossHair" type="TextureRect" parent="Control" unique_id=1713797805]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("GradientTexture2D_stgrx")
+[node name="Interaction_UI" parent="." unique_id=1227589601 instance=ExtResource("14_stgrx")]
