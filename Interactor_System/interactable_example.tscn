@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ct8en3a6s08hw"]
+
+[ext_resource type="Script" uid="uid://0dshjlj57bxm" path="res://Interactor_System/Interactable3D.gd" id="1_v03gi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jc3u"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="GDScript" id="GDScript_stgrx"]
+resource_name = "Interactable_Example"
+script/source = "extends CSGBox3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$Interactable3D.interacted.connect(func() -> void: material.albedo_color = Color(0.250, 0.65, 1.0, 1.0))
+"
+
+[node name="Interactable_Example" type="CSGBox3D" unique_id=1539230269]
+use_collision = true
+material = SubResource("StandardMaterial3D_3jc3u")
+script = SubResource("GDScript_stgrx")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=773115309]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1.5, 0)
+text = "Awesome cube that 
+turns blue when you 
+interact with it"
+
+[node name="Interactable3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=186562582]
+aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
+script = ExtResource("1_v03gi")
+max_distance = 5.0
+metadata/_custom_type_script = "uid://0dshjlj57bxm"

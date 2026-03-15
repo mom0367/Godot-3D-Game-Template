@@ -12,8 +12,9 @@
 [ext_resource type="Material" uid="uid://dh6rgbeed2q8t" path="res://Materials/Material_Resources/Water.tres" id="8_c4gku"]
 [ext_resource type="Material" uid="uid://va184d5c08w6" path="res://Materials/Material_Resources/Snow.tres" id="8_stgrx"]
 [ext_resource type="PackedScene" uid="uid://dlj3g5vv72pc7" path="res://Player_Controller/Player_Character.tscn" id="10_dbicm"]
-[ext_resource type="Script" uid="uid://0dshjlj57bxm" path="res://Interactor_System/Interactable3D.gd" id="12_3jc3u"]
+[ext_resource type="Script" uid="uid://b2okntvjj3ctj" path="res://Force_Area_Omnidirectional.gd" id="12_wav8a"]
 [ext_resource type="PackedScene" uid="uid://bx5u3273kdyj0" path="res://Interactor_System/Interaction_UI.tscn" id="14_stgrx"]
+[ext_resource type="PackedScene" uid="uid://ct8en3a6s08hw" path="res://Interactor_System/interactable_example.tscn" id="14_wav8a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_deljx"]
 albedo_color = Color(0.37922162, 0.9988268, 0, 1)
@@ -51,19 +52,19 @@ subdivide_width = 4
 subdivide_height = 4
 subdivide_depth = 4
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jc3u"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3835l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3835l"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.554)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c4gku"]
+material = SubResource("StandardMaterial3D_3835l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wav8a"]
+resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 metallic_specular = 0.0
-
-[sub_resource type="GDScript" id="GDScript_stgrx"]
-resource_name = "Interactable_Example"
-script/source = "extends CSGBox3D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$Interactable3D.interacted.connect(func() -> void: material.albedo_color = Color(0.250, 0.65, 1.0, 1.0))
-"
 
 [node name="Test_Environment" type="Node3D" unique_id=187425105]
 
@@ -299,23 +300,22 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Water_Volumes/Water_Volume4/Area3D" unique_id=193276903]
 shape = SubResource("BoxShape3D_8hw4u")
 
-[node name="Interactable_Example" type="CSGBox3D" parent="Map" unique_id=2079764861]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 1, -0.5)
-use_collision = true
-material = SubResource("StandardMaterial3D_3jc3u")
-script = SubResource("GDScript_stgrx")
+[node name="Force_Pusher_Omnidirectional" type="Area3D" parent="Map" unique_id=1604899065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 1, 2.5)
+script = ExtResource("12_wav8a")
+force = 10.0
 
-[node name="Label3D" type="Label3D" parent="Map/Interactable_Example" unique_id=1309668095]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1.5, 0)
-text = "Awesome cube that 
-turns blue when you 
-interact with it"
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Force_Pusher_Omnidirectional" unique_id=882314565]
+shape = SubResource("BoxShape3D_3835l")
+debug_color = Color(0, 0.60038817, 0.70000815, 0.76500005)
 
-[node name="Interactable3D" type="VisibleOnScreenNotifier3D" parent="Map/Interactable_Example" unique_id=25968652]
-aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
-script = ExtResource("12_3jc3u")
-max_distance = 5.0
-metadata/_custom_type_script = "uid://0dshjlj57bxm"
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Force_Pusher_Omnidirectional" unique_id=1688401672]
+mesh = SubResource("BoxMesh_c4gku")
+
+[node name="Label3D" type="Label3D" parent="Map" unique_id=1544062512]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 24.25, 2.5, 2.5)
+text = "Omnidirectional pusher cube
+(Only affects each body once)"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=251366875]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.86602545, 0, -0.86602545, 0.5, 0, 9.5, 0)
@@ -331,3 +331,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
 spawn_path = NodePath("../Players")
 
 [node name="Interaction_UI" parent="." unique_id=1227589601 instance=ExtResource("14_stgrx")]
+
+[node name="Interactable_Example" parent="." unique_id=1539230269 instance=ExtResource("14_wav8a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 1.5, -1.25)
+material = SubResource("StandardMaterial3D_wav8a")

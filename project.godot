@@ -23,6 +23,7 @@ config/icon="uid://ek0hwa3cvjpq"
 [autoload]
 
 InteractionHandler="*uid://cee1dfcsp04he"
+InteractionHintSpatial="*uid://bshnmurclckc7"
 
 [debug]
 
