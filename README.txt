@@ -31,6 +31,6 @@ Additional notes:
 		* Original player model
 		
 Known bugs:
-	* Movement sounds don't play sometimes
+	(None)
 	
 For use with the Godot engine, not officially related to Godot or any of its creators of course.

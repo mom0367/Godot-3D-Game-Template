@@ -1,4 +1,4 @@
-#BUG Footsteps don't play sometimes, but I have no way to consistently replicate it.
+#Make sure this node is positioned slightly above the ground, if it clips it won't play.
 
 @icon("uid://bnata7fjyrdg7")
 class_name MovementSounds3D
@@ -121,11 +121,12 @@ func sound_effect() -> void:
 			load_sound_array(current_material_group)
 		
 	if result or underwater_points[1]:
+		#print("Playing footstep")
 		play()
 	else:
 		countdown = 0
 		
-		
+		#print(result)
 		#print("No result")
 		#if timed_sounds:
 			#countdown = 0
