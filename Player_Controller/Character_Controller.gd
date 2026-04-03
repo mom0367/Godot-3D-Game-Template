@@ -35,6 +35,7 @@ extends CharacterBody3D
 @onready var noclipping : bool = false
 @onready var floating : bool = false
 @onready var swimming : bool = false
+@onready var previous_swimming_state : bool = false
 @onready var crouching : bool = false
 
 @export_group("Attributes")
@@ -143,9 +144,16 @@ func _physics_process(delta: float) -> void:
 		
 		#Apply gravity to velocity
 		if gravity_affected:
+			#Breaks some player velocity relatively when hitting water
+			if swimming == true and previous_swimming_state == false:
+				#print("Water dampening.")
+				velocity -= (-(velocity * get_gravity() * (velocity.length() * 0.75)) * delta)
 			if swimming and sinks_in_water and not noclipping:
-				velocity += (get_gravity() * 0.05) * delta
+				#print("Sink")
+				#print((get_gravity() * 0.1) * delta)
+				velocity += (get_gravity() * 0.1) * delta
 			elif not is_on_floor() and not floating:
+				#print(get_gravity() * delta)
 				velocity += get_gravity() * delta
 				
 		
@@ -228,6 +236,10 @@ func _physics_process(delta: float) -> void:
 	#print(velocity)
 	added_velocity = Vector3.ZERO
 	move_and_slide()
+	
+	#Sets previous state variables
+	#print("Setting previous variable states")
+	previous_swimming_state = swimming
 
 func enable_noclip() -> void:
 	if noclip_allowed:
