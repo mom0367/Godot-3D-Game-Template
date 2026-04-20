@@ -106,7 +106,7 @@ func _ready() -> void:
 	check_mappings()
 
 func _unhandled_input(_event: InputEvent) -> void:
-	# Toggle noclip mode
+	#Toggle noclip mode
 	if noclip_allowed and Input.is_action_just_pressed(mapped_inputs["Noclip"]):
 		if not noclipping:
 			enable_noclip()
@@ -123,11 +123,13 @@ func _physics_process(delta: float) -> void:
 		jumps_remaining = max_jumps
 		coyote_time_timer = coyote_time
 		
-	# Changes velocity to move the player
+	#Changes velocity to move the player
 	if movement_allowed:
-		
-		# Apply jump velocity
-		if jump_allowed and (is_on_floor() or coyote_time_timer > 0 or jumps_remaining > 0) and not swimming and not floating:
+		#Removes a jump if falling off of a ledge
+		if (jumps_remaining == max_jumps and not is_on_floor() and coyote_time_timer <= 0):
+			jumps_remaining -= 1
+		#Apply jump velocity
+		if jump_allowed and (is_on_floor() or (coyote_time_timer > 0 and jumps_remaining > 0) and not swimming and not floating):
 			if (Input.is_action_just_pressed(mapped_inputs["Jump"]) or (Input.is_action_pressed(mapped_inputs["Jump"]) and hold_jump == true)):
 				velocity.y += jump_power
 				jumps_remaining -= 1
