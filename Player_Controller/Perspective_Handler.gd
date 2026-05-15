@@ -52,7 +52,6 @@ func _process(delta: float) -> void:
 	#region Camera in and out
 	var current_dolly_sensitvity : float = dolly_change_sensitivity 
 	
-	#TODO these are not referring to the input map
 	if Input.is_action_pressed(mapped_inputs["Zoom_In"]) or Input.is_action_pressed(mapped_inputs["Zoom_In"]): #Lowers dolly sensitivity when a button is pressed, compared to a scroll
 		current_dolly_sensitvity *= .1
 	
