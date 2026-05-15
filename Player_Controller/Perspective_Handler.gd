@@ -41,7 +41,7 @@ func _input(event: InputEvent) -> void:
 		#print("Locking mouse")
 		player_main.mouse_lock = true
 		
-	if player_main.mouse_lock and event is InputEventMouseMotion: # event is InputEventMouseMotion:
+	if player_main.mouse_lock and event is InputEventMouseMotion and player_main.camera_control_allowed: # event is InputEventMouseMotion:
 		rotate_look(event.relative, player_main.look_sensitivity, 0.01)
 
 func _process(delta: float) -> void:
