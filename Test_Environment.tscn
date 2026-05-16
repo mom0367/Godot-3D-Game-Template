@@ -326,6 +326,7 @@ directional_shadow_max_distance = 400.0
 
 [node name="Player_Character" parent="Players" unique_id=1452749356 instance=ExtResource("10_dbicm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25, 0)
+crouch_allowed = false
 
 [node name="Player_Spawner" type="MultiplayerSpawner" parent="." unique_id=1529968100]
 spawn_path = NodePath("../Players")
