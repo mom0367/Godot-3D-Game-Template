@@ -97,18 +97,16 @@ func sound_effect() -> void:
 		current_material_group = ("Shallow Water")
 	elif result:
 		if result.collider is GeometryInstance3D:
-
+			#Checks for common places object materials are stored
 			if result.collider.get("material"):
-				
 				if result.collider.material.has_meta("Material_Group"):
 					current_material_group = result.collider.material.get_meta("Material_Group")
-			elif result.collider.material_override:
-
+			elif result.collider.get("material_override"):
 				if result.collider.material_override.has_meta("Material_Group"):
 					current_material_group = result.collider.material_override.get_meta("Material_Group")
 				
-			else:
-				
+			#Fallback for confirmed solid objects that don't have any material data.
+			if current_material_group == "" and result != null:
 				current_material_group = sound_set.fallback_soundgroup
 			
 
