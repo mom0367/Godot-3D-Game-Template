@@ -64,6 +64,11 @@ extends CharacterBody3D
 @export var look_sensitivity : float = 0.002
 @export var max_vertical_look_angle : float = 85
 
+## Gets the velocity the character intends to go at, even if it doesn't actually move.
+@onready var desired_velocity : Vector3
+## Similar to desired_velocity but ignores added velocity.
+@onready var raw_desired_velocity : Vector3
+
 signal jumped
 signal landed
 
@@ -233,8 +238,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 		velocity.y = 0
-
+	
+	raw_desired_velocity = velocity
 	velocity += added_velocity
+	desired_velocity = velocity
 	#print(velocity)
 	added_velocity = Vector3.ZERO
 	move_and_slide()

@@ -98,7 +98,7 @@ func sound_effect() -> void:
 	elif result:
 		if result.collider is GeometryInstance3D:
 
-			if result.collider.material:
+			if result.collider.get("material"):
 				
 				if result.collider.material.has_meta("Material_Group"):
 					current_material_group = result.collider.material.get_meta("Material_Group")

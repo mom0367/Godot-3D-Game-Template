@@ -1,4 +1,4 @@
-(This project is still a heavy work-in-progress, expect missing features, breaking changes, and a lack of polish) (Current version 0.2.2)
+(This project is still a heavy work-in-progress, expect missing features, breaking changes, and a lack of polish)
 
 Multipurpose character controller and game template for 3D games that involve moving a character body around, hopefully with more features than you actually need.
 
