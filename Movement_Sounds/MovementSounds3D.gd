@@ -127,7 +127,7 @@ func sound_effect() -> void:
 			#print(desired_item)
 			#print(current_gridmap.mesh_library.get_item_mesh(desired_item))
 			#Gets the corresponding mesh for the current tile
-			var desired_mesh = current_gridmap.mesh_library.get_item_mesh(desired_item)
+			var desired_mesh : Mesh = current_gridmap.mesh_library.get_item_mesh(desired_item)
 			#print(desired_mesh.material)
 			current_material_group = find_material(desired_mesh)
 
