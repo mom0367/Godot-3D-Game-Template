@@ -1,5 +1,4 @@
 #Do note that this node uses the position of the camera and not the player, this can cause unintended results of the camera is allowed to detatch from the player
-##NOTE This is an extremely basic implementation, it may be unoptimized or lack common features.
 
 extends VisibleOnScreenNotifier3D
 
@@ -28,5 +27,6 @@ func _ready() -> void:
 	
 @rpc("any_peer", "call_local", "reliable")
 func _on_Interact(player : Node3D) -> void:
-	if self.global_position.distance_to(player.global_position) <= max_distance:
-		interacted.emit()
+	if enabled == true:
+		if self.global_position.distance_to(player.global_position) <= max_distance:
+			interacted.emit()

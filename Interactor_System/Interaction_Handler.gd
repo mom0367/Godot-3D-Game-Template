@@ -4,10 +4,10 @@ extends Node
 
 const max_check_distance : float = 9999
 ##Determines if interactors can be activated directly using the cursor
-const direct_interaction : bool = true
+var direct_interaction : bool = true
 ##Determines if prompts will show up in the world to allow you to interact (Not to be confused with the direct interact UI)
-const proximity_interaction : bool = true
-const max_proximity_angle : float = 130
+var proximity_interaction : bool = true
+var max_proximity_angle : float = 130
 
 ##If an interactable has been detected
 signal interactable_detected(object : Node)
@@ -73,8 +73,9 @@ func _process(_delta: float) -> void:
 						active_interactable = current_child
 	
 	if Input.is_action_just_pressed("Interact") and active_interactable:
-		#print(active_interactable)
-		active_interactable.interact.emit(player)
+		if active_interactable.enabled == true:
+			#print(active_interactable)
+			active_interactable.interact.emit(player)
 							
 	if interactable_flag == false:
 		no_interactable_detected.emit()
