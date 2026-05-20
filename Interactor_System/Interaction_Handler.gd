@@ -64,7 +64,7 @@ func _process(_delta: float) -> void:
 				if current_child is Interactable3D:
 					#print("Child is Interactable3D")
 					#print(active_camera.global_position.distance_to(result["collider"].global_position))
-					if active_camera.global_position.distance_to(current_child.global_position) <= current_child.max_distance:
+					if active_camera.global_position.distance_to(current_child.global_position) <= current_child.max_distance and current_child.enabled:
 						interactable_flag = true
 						interactable_flag_direct = true
 						#print("Interactable detected" + str(current_child))

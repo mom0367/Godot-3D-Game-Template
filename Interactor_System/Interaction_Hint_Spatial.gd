@@ -10,9 +10,10 @@ func _ready() -> void:
 	InteractionHandler.interactable_detected_direct.connect(showHint)
 	InteractionHandler.no_interactable_detected.connect(hideHint)
 	
-func showHint(object : Node) -> void:
-	interaction_prompt.global_position = object.global_position
-	interaction_prompt.visible = true
+func showHint(object : Interactable3D) -> void:
+	if object.enabled == true:
+		interaction_prompt.global_position = object.global_position
+		interaction_prompt.visible = true
 
 func hideHint() -> void:
 	interaction_prompt.visible = false
