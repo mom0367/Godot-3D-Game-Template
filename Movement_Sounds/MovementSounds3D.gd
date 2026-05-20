@@ -1,4 +1,5 @@
 #Make sure this node is positioned slightly above the ground, if it clips it won't play.
+#If you are USING GRIDMAPS, material metadata must be placed into the materials themselves, as meshlibrary/gridmap does not preserve node data
 
 @icon("uid://bnata7fjyrdg7")
 class_name MovementSounds3D
@@ -24,6 +25,26 @@ signal play_sound
 @onready var previous_material_group : String = "" #Stores the previous sound effect so we can avoid unloading and reloading repeat sounds
 @onready var starting_db : float = volume_db 
 
+func find_material(object_to_search : Object) -> String:
+	#Checks for common places object materials are stored
+	#Top two conditions checks for metadata in the actual object, which will always take priority as this is considered an override to the materials metadata.
+	if object_to_search.has_meta("Material_Group"):
+		current_material_group = object_to_search.get_meta("Material_Group")
+	elif object_to_search.get("material"):
+		if object_to_search.material.has_meta("Material_Group"):
+				current_material_group = object_to_search.material.get_meta("Material_Group")
+	elif object_to_search.get("material_override"):
+		if object_to_search.material_override.has_meta("Material_Group"):
+			current_material_group = object_to_search.material_override.get_meta("Material_Group")
+			
+	# Checks parent nodes for metadata
+	if object_to_search is Node and current_material_group == "":
+		find_material(object_to_search.get_parent())
+	
+	#Fallback for confirmed solid objects that don't have any material metadata.
+	if current_material_group == "" and object_to_search != null:
+		current_material_group = sound_set.fallback_soundgroup
+	return current_material_group
 
 func load_sound_array(desired_group : String) -> void:
 
@@ -96,25 +117,19 @@ func sound_effect() -> void:
 	elif underwater_points[0]:
 		current_material_group = ("Shallow Water")
 	elif result:
-		if result.collider is GeometryInstance3D:
-			#Checks for common places object materials are stored
-			#Top two conditions checks for metadata in the actual object, which will always take priority as this is considered an override to the materials metadata.
-			if result.collider.has_meta("Material_Group"):
-				current_material_group = result.collider.get_meta("Material_Group")
-			elif result.collider.get_parent().has_meta("Material_Group"):
-				current_material_group = result.collider.get_parent().get_meta("Material_Group")
-			elif result.collider.get("material"):
-				if result.collider.material.has_meta("Material_Group"):
-					current_material_group = result.collider.material.get_meta("Material_Group")
-			elif result.collider.get("material_override"):
-				if result.collider.material_override.has_meta("Material_Group"):
-					current_material_group = result.collider.material_override.get_meta("Material_Group")
-				
-			#Fallback for confirmed solid objects that don't have any material metadata.
-			if current_material_group == "" and result != null:
-				current_material_group = sound_set.fallback_soundgroup
-			
-
+		##For either collision nodes being detected or csg nodes
+		if result.collider is GeometryInstance3D or result.collider is CollisionObject3D:
+			current_material_group = find_material(result.collider)
+		elif result.collider is GridMap:
+			var current_gridmap : GridMap = result.collider
+			var map_target : Vector3 = current_gridmap.local_to_map(result.position)
+			var desired_item : int = current_gridmap.get_cell_item(map_target)
+			#print(desired_item)
+			#print(current_gridmap.mesh_library.get_item_mesh(desired_item))
+			#Gets the corresponding mesh for the current tile
+			var desired_mesh = current_gridmap.mesh_library.get_item_mesh(desired_item)
+			#print(desired_mesh.material)
+			current_material_group = find_material(desired_mesh)
 
 	if current_material_group != previous_material_group:
 			
@@ -125,6 +140,7 @@ func sound_effect() -> void:
 		
 	if result or underwater_points[1]:
 		#print("Playing footstep")
+		#print(current_material_group)
 		play()
 	else:
 		countdown = 0
@@ -151,7 +167,7 @@ func _process(delta_time: float) -> void:
 	
 	countdown -= delta_time
 	#print("Velocity: " + str(self.get_parent().velocity.length()))
-	volume_db = ((starting_db + (self.get_parent().velocity.length())) * (3.25 * speed_volume_influence))
+	volume_db = ((starting_db + (self.get_parent().desired_velocity.length())) * (3.25 * speed_volume_influence))
 	#print("Volume: " + str(volume_db))
 	
 	#print("Current set:")
@@ -160,10 +176,10 @@ func _process(delta_time: float) -> void:
 		#print(randomizer.get_stream(loop_index))
 	if timed_sounds:
 		
-		if (countdown <= 0) and (self.get_parent().velocity.length() > 0.5):
+		if (countdown <= 0) and (self.get_parent().desired_velocity.length() > 0.5):
 			#print(self.get_parent().velocity.length())
 		
-			countdown = (time_interval / (self.get_parent().velocity.length() * speed_time_influence))
+			countdown = (time_interval / (self.get_parent().desired_velocity.length() * speed_time_influence))
 			
 			play_sound.emit()
 		
