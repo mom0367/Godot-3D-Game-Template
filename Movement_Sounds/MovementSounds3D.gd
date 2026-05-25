@@ -28,6 +28,8 @@ signal play_sound
 func find_material(object_to_search : Object) -> String:
 	#Checks for common places object materials are stored
 	#Top two conditions checks for metadata in the actual object, which will always take priority as this is considered an override to the materials metadata.
+	if object_to_search == null:
+		return ""
 	if object_to_search.has_meta("Material_Group"):
 		current_material_group = object_to_search.get_meta("Material_Group")
 	elif object_to_search.get("material"):
