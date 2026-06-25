@@ -124,7 +124,7 @@ func sound_effect() -> void:
 			current_material_group = find_material(result.collider)
 		elif result.collider is GridMap:
 			var current_gridmap : GridMap = result.collider
-			var map_target : Vector3 = current_gridmap.local_to_map(result.position)
+			var map_target : Vector3 = current_gridmap.local_to_map(current_gridmap.to_local(result.position))
 			var desired_item : int = current_gridmap.get_cell_item(map_target)
 			#print(desired_item)
 			#print(current_gridmap.mesh_library.get_item_mesh(desired_item))
