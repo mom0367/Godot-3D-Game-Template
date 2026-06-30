@@ -23,10 +23,10 @@ func _ready() -> void:
 		enabled = false
 		push_warning("No interact input found")
 		
-	interact.connect(_on_Interact)
+	interact.connect(_on_interact)
 	
 @rpc("any_peer", "call_local", "reliable")
-func _on_Interact(player : Node3D) -> void:
+func _on_interact(player : Node3D) -> void:
 	if enabled == true:
 		if self.global_position.distance_to(player.global_position) <= max_distance:
 			interacted.emit()
