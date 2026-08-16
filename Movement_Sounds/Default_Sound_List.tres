@@ -44,7 +44,7 @@
 [ext_resource type="AudioStream" uid="uid://cnue4dlsj1rq3" path="res://Movement_Sounds/Sound_Effects/Tile/Tile_Footstep_3.wav" id="33_ytigw"]
 [ext_resource type="AudioStream" uid="uid://cu6mix873wg30" path="res://Movement_Sounds/Sound_Effects/Tile/Tile_Footstep_4.wav" id="34_2buf0"]
 [ext_resource type="AudioStream" uid="uid://bwwhx6m5omple" path="res://Movement_Sounds/Sound_Effects/Tile/Tile_Footstep_5.wav" id="35_rtcbg"]
-[ext_resource type="Script" uid="uid://i51us87oiobt" path="res://Player_Controller/MaterialList_Resource.gd" id="36_ojvxt"]
+[ext_resource type="Script" uid="uid://i51us87oiobt" path="res://Movement_Sounds/MaterialList_Resource.gd" id="36_ojvxt"]
 [ext_resource type="AudioStream" uid="uid://43bx8fubquf3" path="res://Movement_Sounds/Sound_Effects/Water/Shallow_Water_Footstep_1.wav" id="45_qvjum"]
 [ext_resource type="AudioStream" uid="uid://dp7j3dxocyug1" path="res://Movement_Sounds/Sound_Effects/Water/Shallow_Water_Footstep_2.wav" id="46_460f8"]
 [ext_resource type="AudioStream" uid="uid://bebxunbknl6d4" path="res://Movement_Sounds/Sound_Effects/Water/Shallow_Water_Footstep_3.wav" id="47_wri83"]
