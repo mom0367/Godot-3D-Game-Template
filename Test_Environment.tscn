@@ -100,6 +100,11 @@ material_override = ExtResource("2_jj7ji")
 use_collision = true
 size = Vector3(4, 0.5, 4)
 
+[node name="No_Material" type="CSGBox3D" parent="Map/Material_Samples" unique_id=230888798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, 6)
+use_collision = true
+size = Vector3(4, 0.5, 4)
+
 [node name="Grass" type="CSGBox3D" parent="Map/Material_Samples" unique_id=1376540895]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.25, 2)
 material_override = ExtResource("3_smq8q")
