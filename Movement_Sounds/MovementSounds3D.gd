@@ -22,7 +22,7 @@ signal play_sound
 @onready var randomizer : AudioStreamRandomizer = AudioStreamRandomizer.new()
 
 @onready var current_material_group : String = "" 
-@onready var previous_material_group : String = "" #Stores the previous sound effect so we can avoid unloading and reloading repeat sounds
+@onready var previous_material_group : String = "" #Stores the previous sound effect used
 @onready var starting_db : float = volume_db 
 
 func find_material(object_to_search : Object) -> String:
@@ -38,14 +38,19 @@ func find_material(object_to_search : Object) -> String:
 	elif object_to_search.get("material_override"):
 		if object_to_search.material_override.has_meta("Material_Group"):
 			current_material_group = object_to_search.material_override.get_meta("Material_Group")
+	else:
+		##Clears current material group, without this the fallback group will not play properly as it will still be set to whatever material group was set last.
+		current_material_group = ""
 			
 	# Checks parent nodes for metadata
 	if object_to_search is Node and current_material_group == "":
 		find_material(object_to_search.get_parent())
 	
 	#Fallback for confirmed solid objects that don't have any material metadata.
-	if current_material_group == "" and object_to_search != null:
+	if current_material_group == "" and object_to_search != null: 
+		#print("Restorting to fallback material group")
 		current_material_group = sound_set.fallback_soundgroup
+	#print(current_material_group)
 	return current_material_group
 
 func load_sound_array(desired_group : String) -> void:
@@ -133,8 +138,9 @@ func sound_effect() -> void:
 			#print(desired_mesh.material)
 			current_material_group = find_material(desired_mesh)
 
+	#Does a check to avoid reloading the sound list if the material hasn't changed
 	if current_material_group != previous_material_group:
-			
+		#print("New material")
 		if current_material_group == null:
 			load_sound_array(sound_set.fallback_soundgroup)
 		else:
@@ -142,7 +148,6 @@ func sound_effect() -> void:
 		
 	if result or underwater_points[1]:
 		#print("Playing footstep")
-		#print(current_material_group)
 		play()
 	else:
 		countdown = 0
@@ -151,7 +156,8 @@ func sound_effect() -> void:
 		#print("No result")
 		#if timed_sounds:
 			#countdown = 0
-		
+			
+	#print(current_material_group)
 
 
 func _ready() -> void:
