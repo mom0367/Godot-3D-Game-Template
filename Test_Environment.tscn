@@ -11,7 +11,7 @@
 [ext_resource type="Material" uid="uid://c0dqllv5tgutr" path="res://materials/Material_Resources/Grid_Blue.tres" id="7_3835l"]
 [ext_resource type="Material" uid="uid://dh6rgbeed2q8t" path="res://materials/Material_Resources/Water.tres" id="8_c4gku"]
 [ext_resource type="Material" uid="uid://va184d5c08w6" path="res://materials/Material_Resources/Snow.tres" id="8_stgrx"]
-[ext_resource type="PackedScene" uid="uid://dlj3g5vv72pc7" path="res://player_controller/Player_Character.tscn" id="10_dbicm"]
+[ext_resource type="PackedScene" uid="uid://p8nowy1cujv1" path="res://player_controller/player_character.tscn" id="10_dbicm"]
 [ext_resource type="Script" uid="uid://b2okntvjj3ctj" path="res://extra_systems/force_pushers/Force_Area_Omnidirectional.gd" id="12_wav8a"]
 [ext_resource type="PackedScene" uid="uid://bx5u3273kdyj0" path="res://extra_systems/interactor_system/Interaction_UI.tscn" id="14_stgrx"]
 [ext_resource type="PackedScene" uid="uid://ct8en3a6s08hw" path="res://extra_systems/interactor_system/interactable_example.tscn" id="14_wav8a"]
