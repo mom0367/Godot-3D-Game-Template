@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://xgs22y8bv2cw"]
 
-[ext_resource type="Material" uid="uid://b62bi6bjpqcmi" path="res://materials/material_resources/grid.tres" id="1_6hbru"]
-[ext_resource type="Material" uid="uid://dhp75iox4jbtw" path="res://materials/material_resources/wood_plank.tres" id="2_jj7ji"]
-[ext_resource type="Material" uid="uid://dbjrhs0bv22rq" path="res://materials/material_resources/grass.tres" id="3_smq8q"]
-[ext_resource type="Material" uid="uid://b72lkasjvidkm" path="res://materials/material_resources/ground.tres" id="4_3jc3u"]
-[ext_resource type="Material" uid="uid://bbjng30mvm64" path="res://materials/material_resources/sheet_metal.tres" id="5_stgrx"]
-[ext_resource type="Material" uid="uid://sktsuemfs38p" path="res://materials/material_resources/carpet.tres" id="6_jj7ji"]
-[ext_resource type="Material" uid="uid://blv22y8y6uvqx" path="res://materials/material_resources/tile.tres" id="6_wav8a"]
-[ext_resource type="Material" uid="uid://jy3c3nu7wsqa" path="res://materials/material_resources/sand.tres" id="7_3jc3u"]
-[ext_resource type="Material" uid="uid://c0dqllv5tgutr" path="res://materials/material_resources/grid_blue.tres" id="7_3835l"]
-[ext_resource type="Material" uid="uid://dh6rgbeed2q8t" path="res://materials/material_resources/water.tres" id="8_c4gku"]
-[ext_resource type="Material" uid="uid://va184d5c08w6" path="res://materials/material_resources/snow.tres" id="8_stgrx"]
-[ext_resource type="PackedScene" uid="uid://p8nowy1cujv1" path="res://player_controller/player_character.tscn" id="10_dbicm"]
-[ext_resource type="Script" uid="uid://b2okntvjj3ctj" path="res://extra_systems/force_pushers/Force_Area_Omnidirectional.gd" id="12_wav8a"]
-[ext_resource type="PackedScene" uid="uid://bx5u3273kdyj0" path="res://extra_systems/interactor_system/interaction_ui.tscn" id="14_stgrx"]
-[ext_resource type="PackedScene" uid="uid://ct8en3a6s08hw" path="res://extra_systems/interactor_system/interactable_example.tscn" id="14_wav8a"]
+[ext_resource type="Material" uid="uid://b62bi6bjpqcmi" path="res://materials/material_resources/grid.tres" id="1_6h0c5"]
+[ext_resource type="Material" uid="uid://dhp75iox4jbtw" path="res://materials/material_resources/wood_plank.tres" id="2_e5sb5"]
+[ext_resource type="Material" uid="uid://dbjrhs0bv22rq" path="res://materials/material_resources/grass.tres" id="3_84ocs"]
+[ext_resource type="Material" uid="uid://b72lkasjvidkm" path="res://materials/material_resources/ground.tres" id="4_mpe51"]
+[ext_resource type="Material" uid="uid://bbjng30mvm64" path="res://materials/material_resources/sheet_metal.tres" id="5_p0p3j"]
+[ext_resource type="Material" uid="uid://sktsuemfs38p" path="res://materials/material_resources/carpet.tres" id="6_tpfgl"]
+[ext_resource type="Material" uid="uid://jy3c3nu7wsqa" path="res://materials/material_resources/sand.tres" id="7_vwd18"]
+[ext_resource type="Material" uid="uid://va184d5c08w6" path="res://materials/material_resources/snow.tres" id="8_aqrd8"]
+[ext_resource type="Material" uid="uid://blv22y8y6uvqx" path="res://materials/material_resources/tile.tres" id="9_ijnbp"]
+[ext_resource type="Material" uid="uid://c0dqllv5tgutr" path="res://materials/material_resources/grid_blue.tres" id="10_j8q7s"]
+[ext_resource type="Material" uid="uid://dh6rgbeed2q8t" path="res://materials/material_resources/water.tres" id="11_gs3s8"]
+[ext_resource type="Script" uid="uid://b2okntvjj3ctj" path="res://extra_systems/force_pushers/Force_Area_Omnidirectional.gd" id="12_iom6o"]
+[ext_resource type="PackedScene" uid="uid://p8nowy1cujv1" path="res://player_controller/player_character.tscn" id="13_h2e74"]
+[ext_resource type="PackedScene" uid="uid://bx5u3273kdyj0" path="res://extra_systems/interactor_system/interaction_ui.tscn" id="14_jpyyj"]
+[ext_resource type="PackedScene" uid="uid://ct8en3a6s08hw" path="res://extra_systems/interactor_system/interactable_example.tscn" id="15_hb5u0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_deljx"]
 albedo_color = Color(0.37922162, 0.9988268, 0, 1)
@@ -73,7 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Floor" type="CSGBox3D" parent="Map" unique_id=1968738334]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 2.5)
-material_override = ExtResource("1_6hbru")
+material_override = ExtResource("1_6h0c5")
 use_collision = true
 size = Vector3(140, 1, 140)
 
@@ -96,7 +96,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 3)
 
 [node name="Wood" type="CSGBox3D" parent="Map/Material_Samples" unique_id=237773983]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, 2)
-material_override = ExtResource("2_jj7ji")
+material_override = ExtResource("2_e5sb5")
 use_collision = true
 size = Vector3(4, 0.5, 4)
 
@@ -107,43 +107,43 @@ size = Vector3(4, 0.5, 4)
 
 [node name="Grass" type="CSGBox3D" parent="Map/Material_Samples" unique_id=1376540895]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.25, 2)
-material_override = ExtResource("3_smq8q")
+material_override = ExtResource("3_84ocs")
 use_collision = true
 size = Vector3(4, 0.5, 4)
 
 [node name="Dirt" type="CSGBox3D" parent="Map/Material_Samples" unique_id=92503871]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.25, 2)
-material_override = ExtResource("4_3jc3u")
+material_override = ExtResource("4_mpe51")
 use_collision = true
 size = Vector3(4, 0.5, 4)
 
 [node name="Metal" type="CSGBox3D" parent="Map/Material_Samples" unique_id=685184105]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.25, 2)
-material_override = ExtResource("5_stgrx")
+material_override = ExtResource("5_p0p3j")
 use_collision = true
 size = Vector3(4, 0.5, 4)
 
 [node name="Carpet" type="CSGBox3D" parent="Map/Material_Samples" unique_id=1244951654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.25, 6)
-material_override = ExtResource("6_jj7ji")
+material_override = ExtResource("6_tpfgl")
 use_collision = true
 size = Vector3(4, 0.5, 4)
 
 [node name="Sand" type="CSGBox3D" parent="Map/Material_Samples" unique_id=531947772]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.25, 6)
-material_override = ExtResource("7_3jc3u")
+material_override = ExtResource("7_vwd18")
 use_collision = true
 size = Vector3(4, 0.5, 4)
 
 [node name="Snow" type="CSGBox3D" parent="Map/Material_Samples" unique_id=1610465242]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.25, 6)
-material_override = ExtResource("8_stgrx")
+material_override = ExtResource("8_aqrd8")
 use_collision = true
 size = Vector3(4, 0.5, 4)
 
 [node name="Tile" type="CSGBox3D" parent="Map/Material_Samples" unique_id=682541536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.25, 2)
-material_override = ExtResource("6_wav8a")
+material_override = ExtResource("9_ijnbp")
 use_collision = true
 size = Vector3(4, 0.5, 4)
 
@@ -159,91 +159,91 @@ size = Vector3(4, 0.5, 4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3.5, -15.5)
 use_collision = true
 size = Vector3(6, 6, 1)
-material = ExtResource("1_6hbru")
+material = ExtResource("1_6h0c5")
 
 [node name="Wall2" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1656425351]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 3.5, -15.5)
 use_collision = true
 size = Vector3(6, 6, 1)
-material = ExtResource("1_6hbru")
+material = ExtResource("1_6h0c5")
 
 [node name="Wall3" type="CSGBox3D" parent="Map/Test_Structure" unique_id=444499319]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.5, -22.5)
 use_collision = true
 size = Vector3(10, 6, 1)
-material = ExtResource("1_6hbru")
+material = ExtResource("1_6h0c5")
 
 [node name="Wall4" type="CSGBox3D" parent="Map/Test_Structure" unique_id=447612416]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 3.5, -25)
 use_collision = true
 size = Vector3(1, 6, 4)
-material = ExtResource("1_6hbru")
+material = ExtResource("1_6h0c5")
 
 [node name="Wall5" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1401094855]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3.5, -26.5)
 use_collision = true
 size = Vector3(4, 6, 1)
-material = ExtResource("1_6hbru")
+material = ExtResource("1_6h0c5")
 
 [node name="Wall6" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1088322418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 3.5, -17)
 use_collision = true
 size = Vector3(1, 6, 2)
-material = ExtResource("1_6hbru")
+material = ExtResource("1_6h0c5")
 
 [node name="Wall7" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1646788157]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 3.5, -21)
 use_collision = true
 size = Vector3(1, 6, 2)
-material = ExtResource("1_6hbru")
+material = ExtResource("1_6h0c5")
 
 [node name="Wall8" type="CSGBox3D" parent="Map/Test_Structure" unique_id=2065648652]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 3.5, -21)
 use_collision = true
 size = Vector3(1, 6, 12)
-material = ExtResource("1_6hbru")
+material = ExtResource("1_6h0c5")
 
 [node name="Wall9" type="CSGBox3D" parent="Map/Test_Structure" unique_id=2013050393]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, -19)
 use_collision = true
 size = Vector3(1, 1, 2)
-material = ExtResource("1_6hbru")
+material = ExtResource("1_6h0c5")
 
 [node name="Wall10" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1321554481]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 5, -19)
 use_collision = true
 size = Vector3(1, 3, 2)
-material = ExtResource("1_6hbru")
+material = ExtResource("1_6h0c5")
 
 [node name="Wall11" type="CSGBox3D" parent="Map/Test_Structure" unique_id=1201346602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5.5, -15.5)
 use_collision = true
 size = Vector3(2, 2, 1)
-material = ExtResource("1_6hbru")
+material = ExtResource("1_6h0c5")
 
 [node name="Outer_Walls" type="Node3D" parent="Map" unique_id=296219280]
 
 [node name="Wall" type="CSGBox3D" parent="Map/Outer_Walls" unique_id=1200107107]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.5, 21.5, 2.5)
-material_override = ExtResource("7_3835l")
+material_override = ExtResource("10_j8q7s")
 use_collision = true
 size = Vector3(2, 42, 140)
 
 [node name="Wall2" type="CSGBox3D" parent="Map/Outer_Walls" unique_id=589843554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.5, 21.5, 2.5)
-material_override = ExtResource("7_3835l")
+material_override = ExtResource("10_j8q7s")
 use_collision = true
 size = Vector3(2, 42, 140)
 
 [node name="Wall3" type="CSGBox3D" parent="Map/Outer_Walls" unique_id=1308091269]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 21.5, -66.5)
-material_override = ExtResource("7_3835l")
+material_override = ExtResource("10_j8q7s")
 use_collision = true
 size = Vector3(136, 42, 2)
 
 [node name="Wall4" type="CSGBox3D" parent="Map/Outer_Walls" unique_id=2130098114]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 21.5, 71.5)
-material_override = ExtResource("7_3835l")
+material_override = ExtResource("10_j8q7s")
 use_collision = true
 size = Vector3(136, 42, 2)
 
@@ -257,7 +257,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.75, 0, 27)
 transform = Transform3D(3, 0, 0, 0, 0.25, 0, 0, 0, 3, -6.75, 0.5, -4.75)
 
 [node name="Water_Volume" type="MeshInstance3D" parent="Map/Water_Volumes/Water_Volume" unique_id=611339719]
-material_override = ExtResource("8_c4gku")
+material_override = ExtResource("11_gs3s8")
 mesh = SubResource("BoxMesh_o64p6")
 skeleton = NodePath("../../..")
 
@@ -270,7 +270,7 @@ shape = SubResource("BoxShape3D_8hw4u")
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, -10.75, 1, -4.75)
 
 [node name="Water_Volume" type="MeshInstance3D" parent="Map/Water_Volumes/Water_Volume2" unique_id=1382669527]
-material_override = ExtResource("8_c4gku")
+material_override = ExtResource("11_gs3s8")
 mesh = SubResource("BoxMesh_o64p6")
 skeleton = NodePath("../../..")
 
@@ -283,7 +283,7 @@ shape = SubResource("BoxShape3D_8hw4u")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -16.25, 2, -4.75)
 
 [node name="Water_Volume" type="MeshInstance3D" parent="Map/Water_Volumes/Water_Volume3" unique_id=565838745]
-material_override = ExtResource("8_c4gku")
+material_override = ExtResource("11_gs3s8")
 mesh = SubResource("BoxMesh_7rdng")
 skeleton = NodePath("../../..")
 
@@ -296,7 +296,7 @@ shape = SubResource("BoxShape3D_8hw4u")
 transform = Transform3D(26.229807, 0, 0, 0, 6, 0, 0, 0, 9.017709, -16.25, 3.5, 4.5)
 
 [node name="Water_Volume" type="MeshInstance3D" parent="Map/Water_Volumes/Water_Volume4" unique_id=1839976641]
-material_override = ExtResource("8_c4gku")
+material_override = ExtResource("11_gs3s8")
 mesh = SubResource("BoxMesh_o64p6")
 skeleton = NodePath("../../..")
 
@@ -307,7 +307,7 @@ shape = SubResource("BoxShape3D_8hw4u")
 
 [node name="Force_Pusher_Omnidirectional" type="Area3D" parent="Map" unique_id=1604899065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 1, 2.5)
-script = ExtResource("12_wav8a")
+script = ExtResource("12_iom6o")
 force = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Force_Pusher_Omnidirectional" unique_id=882314565]
@@ -329,14 +329,14 @@ directional_shadow_max_distance = 400.0
 
 [node name="Players" type="Node" parent="." unique_id=282986476]
 
-[node name="Player_Character" parent="Players" unique_id=1452749356 instance=ExtResource("10_dbicm")]
+[node name="Player_Character" parent="Players" unique_id=1452749356 instance=ExtResource("13_h2e74")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Player_Spawner" type="MultiplayerSpawner" parent="." unique_id=1529968100]
 spawn_path = NodePath("../Players")
 
-[node name="Interaction_UI" parent="." unique_id=1227589601 instance=ExtResource("14_stgrx")]
+[node name="Interaction_UI" parent="." unique_id=1227589601 instance=ExtResource("14_jpyyj")]
 
-[node name="Interactable_Example" parent="." unique_id=1539230269 instance=ExtResource("14_wav8a")]
+[node name="Interactable_Example" parent="." unique_id=1539230269 instance=ExtResource("15_hb5u0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 1.5, -1.25)
 material = SubResource("StandardMaterial3D_wav8a")
