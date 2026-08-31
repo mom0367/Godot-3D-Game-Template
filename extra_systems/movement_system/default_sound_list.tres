@@ -1,0 +1,91 @@
+[gd_resource type="Resource" script_class="MaterialList" format=3 uid="uid://cmiuyr0thgkuo"]
+
+[ext_resource type="AudioStream" uid="uid://d3i5fr3buxdna" path="res://extra_systems/movement_system/sound_effects/carpet/carpet_1.wav" id="1_b0q2n"]
+[ext_resource type="AudioStream" uid="uid://dkhwpyv1dng00" path="res://extra_systems/movement_system/sound_effects/carpet/carpet_2.wav" id="2_0msir"]
+[ext_resource type="AudioStream" uid="uid://bbpcqpqf82in2" path="res://extra_systems/movement_system/sound_effects/carpet/carpet_3.wav" id="3_vgk6e"]
+[ext_resource type="AudioStream" uid="uid://dskk3b3e2orsb" path="res://extra_systems/movement_system/sound_effects/carpet/carpet_4.wav" id="4_1ad06"]
+[ext_resource type="AudioStream" uid="uid://17x634xlk2en" path="res://extra_systems/movement_system/sound_effects/carpet/carpet_5.wav" id="5_rhuns"]
+[ext_resource type="AudioStream" uid="uid://cq0dx2pgy54hn" path="res://extra_systems/movement_system/sound_effects/water/water_wade_1.wav" id="6_bop0u"]
+[ext_resource type="AudioStream" uid="uid://bh86vnb6h3sog" path="res://extra_systems/movement_system/sound_effects/water/water_wade_2.wav" id="7_2rcdj"]
+[ext_resource type="AudioStream" uid="uid://bom1ct2b8s72g" path="res://extra_systems/movement_system/sound_effects/water/water_wade_3.wav" id="8_5dtqp"]
+[ext_resource type="AudioStream" uid="uid://mvlfmtyv8ce6" path="res://extra_systems/movement_system/sound_effects/water/water_wade_4.wav" id="9_sqt02"]
+[ext_resource type="AudioStream" uid="uid://d1skw271wrd7g" path="res://extra_systems/movement_system/sound_effects/water/water_wade_5.wav" id="10_rvbxc"]
+[ext_resource type="AudioStream" uid="uid://cul8sxcpc1466" path="res://extra_systems/movement_system/sound_effects/dirt/dirt_footstep_1.wav" id="11_b0q2n"]
+[ext_resource type="AudioStream" uid="uid://d0xpdktect5u0" path="res://extra_systems/movement_system/sound_effects/dirt/dirt_footstep_2.wav" id="12_0msir"]
+[ext_resource type="AudioStream" uid="uid://n1mkyp3jf66s" path="res://extra_systems/movement_system/sound_effects/dirt/dirt_footstep_3.wav" id="13_vgk6e"]
+[ext_resource type="AudioStream" uid="uid://d1c2m6xfhrjri" path="res://extra_systems/movement_system/sound_effects/dirt/dirt_footstep_4.wav" id="14_1ad06"]
+[ext_resource type="AudioStream" uid="uid://bi5fhfx04r55y" path="res://extra_systems/movement_system/sound_effects/dirt/dirt_footstep_5.wav" id="15_rhuns"]
+[ext_resource type="AudioStream" uid="uid://c3iuxodaygkfp" path="res://extra_systems/movement_system/sound_effects/dirt/dirt_footstep_6.wav" id="16_bop0u"]
+[ext_resource type="AudioStream" uid="uid://dxl2tt53melv2" path="res://extra_systems/movement_system/sound_effects/dirt/dirt_footstep_7.wav" id="17_2rcdj"]
+[ext_resource type="AudioStream" uid="uid://bdja2c2pn4vq" path="res://extra_systems/movement_system/sound_effects/grass/grass_footstep_1.wav" id="18_5dtqp"]
+[ext_resource type="AudioStream" uid="uid://bfdaqb6kdb1bj" path="res://extra_systems/movement_system/sound_effects/grass/grass_footstep_2.wav" id="19_sqt02"]
+[ext_resource type="AudioStream" uid="uid://sfgnq8b42csa" path="res://extra_systems/movement_system/sound_effects/grass/grass_footstep_3.wav" id="20_rvbxc"]
+[ext_resource type="AudioStream" uid="uid://b26h6gm836uvd" path="res://extra_systems/movement_system/sound_effects/grass/grass_footstep_4.wav" id="21_le6pw"]
+[ext_resource type="AudioStream" uid="uid://ck6k85ockae8g" path="res://extra_systems/movement_system/sound_effects/grass/grass_footstep_5.wav" id="22_dnp8v"]
+[ext_resource type="AudioStream" uid="uid://i1xqgpitvaxh" path="res://extra_systems/movement_system/sound_effects/metal/metal_footstep_1.wav" id="23_3lxap"]
+[ext_resource type="AudioStream" uid="uid://dyoufarwd5ug5" path="res://extra_systems/movement_system/sound_effects/metal/metal_footstep_2.wav" id="24_ufbyx"]
+[ext_resource type="AudioStream" uid="uid://dsb0ptvlviif4" path="res://extra_systems/movement_system/sound_effects/metal/metal_footstep_3.wav" id="25_oh5ir"]
+[ext_resource type="AudioStream" uid="uid://d06tngrshfgad" path="res://extra_systems/movement_system/sound_effects/metal/metal_footstep_4.wav" id="26_a7rc2"]
+[ext_resource type="AudioStream" uid="uid://di2jx3sr0m1xx" path="res://extra_systems/movement_system/sound_effects/metal/metal_footstep_5.wav" id="27_mub4y"]
+[ext_resource type="AudioStream" uid="uid://cdrstdwpqxat8" path="res://extra_systems/movement_system/sound_effects/sand/sand_1.wav" id="28_flbgp"]
+[ext_resource type="AudioStream" uid="uid://c2f08k0pjsnb8" path="res://extra_systems/movement_system/sound_effects/sand/sand_2.wav" id="29_16vbe"]
+[ext_resource type="AudioStream" uid="uid://177edpdjmio8" path="res://extra_systems/movement_system/sound_effects/sand/sand_3.wav" id="30_wrb70"]
+[ext_resource type="AudioStream" uid="uid://dntu7cn6bo604" path="res://extra_systems/movement_system/sound_effects/sand/sand_4.wav" id="31_5odot"]
+[ext_resource type="AudioStream" uid="uid://so3twk7d0jld" path="res://extra_systems/movement_system/sound_effects/sand/sand_5.wav" id="32_iyweb"]
+[ext_resource type="AudioStream" uid="uid://cyay824f3yhdx" path="res://extra_systems/movement_system/sound_effects/water/shallow_water_footstep_1.wav" id="33_dufso"]
+[ext_resource type="AudioStream" uid="uid://suj88ty2fa1" path="res://extra_systems/movement_system/sound_effects/water/shallow_water_footstep_2.wav" id="34_ymoku"]
+[ext_resource type="AudioStream" uid="uid://bdidd8n6eutxh" path="res://extra_systems/movement_system/sound_effects/water/shallow_water_footstep_3.wav" id="35_h821n"]
+[ext_resource type="AudioStream" uid="uid://cuyc3jb47npco" path="res://extra_systems/movement_system/sound_effects/water/shallow_water_footstep_4.wav" id="36_qba01"]
+[ext_resource type="AudioStream" uid="uid://bf57jem30tlxg" path="res://extra_systems/movement_system/sound_effects/water/shallow_water_footstep_5.wav" id="37_0m18m"]
+[ext_resource type="AudioStream" uid="uid://b6lise2chd7px" path="res://extra_systems/movement_system/sound_effects/snow/snow_1.wav" id="38_0swc1"]
+[ext_resource type="AudioStream" uid="uid://ca2bqta7s27kb" path="res://extra_systems/movement_system/sound_effects/snow/snow_2.wav" id="39_8hili"]
+[ext_resource type="AudioStream" uid="uid://cwypijgoolovh" path="res://extra_systems/movement_system/sound_effects/snow/snow_3.wav" id="40_5fm42"]
+[ext_resource type="AudioStream" uid="uid://dd8uatmqi64n5" path="res://extra_systems/movement_system/sound_effects/snow/snow_4.wav" id="41_iwmqf"]
+[ext_resource type="AudioStream" uid="uid://bjqktlwxbq4ci" path="res://extra_systems/movement_system/sound_effects/snow/snow_5.wav" id="42_iy5s4"]
+[ext_resource type="AudioStream" uid="uid://drhje80kmmbaj" path="res://extra_systems/movement_system/sound_effects/snow/snow_6.wav" id="43_podkv"]
+[ext_resource type="AudioStream" uid="uid://8v6k7g6ihklw" path="res://extra_systems/movement_system/sound_effects/tile/tile_footstep_1.wav" id="44_y2xnb"]
+[ext_resource type="AudioStream" uid="uid://d4kvrg0n88jrw" path="res://extra_systems/movement_system/sound_effects/tile/tile_footstep_2.wav" id="45_xn4gh"]
+[ext_resource type="AudioStream" uid="uid://ohwqy4a4reki" path="res://extra_systems/movement_system/sound_effects/tile/tile_footstep_3.wav" id="46_vfgcy"]
+[ext_resource type="AudioStream" uid="uid://j4eif6o64t7w" path="res://extra_systems/movement_system/sound_effects/tile/tile_footstep_4.wav" id="47_pqv25"]
+[ext_resource type="AudioStream" uid="uid://g61ikcm15n8a" path="res://extra_systems/movement_system/sound_effects/tile/tile_footstep_5.wav" id="48_vjuth"]
+[ext_resource type="AudioStream" uid="uid://bmyeiww4u620c" path="res://extra_systems/movement_system/sound_effects/wood/wood_footstep_1.wav" id="49_5t21c"]
+[ext_resource type="AudioStream" uid="uid://b0ifa6umnkyal" path="res://extra_systems/movement_system/sound_effects/wood/wood_footstep_2.wav" id="50_57igy"]
+[ext_resource type="AudioStream" uid="uid://ue16eenj8iew" path="res://extra_systems/movement_system/sound_effects/wood/wood_footstep_3.wav" id="51_c5dsn"]
+[ext_resource type="AudioStream" uid="uid://bctjgaldxir2r" path="res://extra_systems/movement_system/sound_effects/wood/wood_footstep_4.wav" id="52_xg641"]
+[ext_resource type="AudioStream" uid="uid://dm5mxhnx43r0l" path="res://extra_systems/movement_system/sound_effects/wood/wood_footstep_5.wav" id="53_5k2lr"]
+[ext_resource type="AudioStream" uid="uid://c3ns186l421o7" path="res://extra_systems/movement_system/sound_effects/wood/wood_footstep_6.wav" id="54_lmwtc"]
+[ext_resource type="AudioStream" uid="uid://lwyn4ju1p2un" path="res://extra_systems/movement_system/sound_effects/wood/wood_footstep_7.wav" id="55_i8jwo"]
+[ext_resource type="AudioStream" uid="uid://drhns5u376dj" path="res://extra_systems/movement_system/sound_effects/wood/wood_footstep_8.wav" id="56_pemof"]
+[ext_resource type="AudioStream" uid="uid://b5miotljhbmy0" path="res://extra_systems/movement_system/sound_effects/wood/wood_footstep_9.wav" id="57_y4xy7"]
+[ext_resource type="AudioStream" uid="uid://bl2wpcbv4g1i7" path="res://extra_systems/movement_system/sound_effects/wood/wood_footstep_10.wav" id="58_7pv8g"]
+[ext_resource type="AudioStream" uid="uid://l6i8lk2le4sj" path="res://extra_systems/movement_system/sound_effects/wood/wood_footstep_11.wav" id="59_653ad"]
+[ext_resource type="AudioStream" uid="uid://pwgrw3uqhp8t" path="res://extra_systems/movement_system/sound_effects/concrete/concrete_footstep1.wav" id="60_sftax"]
+[ext_resource type="AudioStream" uid="uid://cfctrd3t4n2dk" path="res://extra_systems/movement_system/sound_effects/concrete/concrete_footstep2.wav" id="61_m7jst"]
+[ext_resource type="AudioStream" uid="uid://cke52wfn5id4f" path="res://extra_systems/movement_system/sound_effects/concrete/concrete_footstep3.wav" id="62_615ci"]
+[ext_resource type="AudioStream" uid="uid://bjh75bd1ckwa3" path="res://extra_systems/movement_system/sound_effects/concrete/concrete_footstep4.wav" id="63_yq47h"]
+[ext_resource type="AudioStream" uid="uid://7wd3ks1yqnle" path="res://extra_systems/movement_system/sound_effects/concrete/concrete_footstep5.wav" id="64_u4dwm"]
+[ext_resource type="AudioStream" uid="uid://usayfmtwcy3a" path="res://extra_systems/movement_system/sound_effects/concrete/concrete_footstep6.wav" id="65_jqoi2"]
+[ext_resource type="AudioStream" uid="uid://cc4lkcep42nkd" path="res://extra_systems/movement_system/sound_effects/concrete/concrete_footstep7.wav" id="66_lxbo6"]
+[ext_resource type="AudioStream" uid="uid://cw30uwxnqi5sv" path="res://extra_systems/movement_system/sound_effects/concrete/concrete_footstep8.wav" id="67_181u6"]
+[ext_resource type="AudioStream" uid="uid://bjwde8bb3aw4c" path="res://extra_systems/movement_system/sound_effects/concrete/concrete_footstep9.wav" id="68_7widf"]
+[ext_resource type="AudioStream" uid="uid://c7gtmcutb3nkv" path="res://extra_systems/movement_system/sound_effects/concrete/concrete_footstep10.wav" id="69_qc14y"]
+[ext_resource type="AudioStream" uid="uid://bbotc82gnmlbq" path="res://extra_systems/movement_system/sound_effects/concrete/concrete_footstep11.wav" id="70_ma50t"]
+[ext_resource type="Script" uid="uid://i51us87oiobt" path="res://extra_systems/movement_system/MaterialList.gd" id="71_uagmd"]
+
+[resource]
+script = ExtResource("71_uagmd")
+fallback_soundgroup = "Stone"
+material_dictionary = Dictionary[String, Array]({
+"Carpet": [ExtResource("1_b0q2n"), ExtResource("2_0msir"), ExtResource("3_vgk6e"), ExtResource("4_1ad06"), ExtResource("5_rhuns")],
+"Deep Water": [ExtResource("6_bop0u"), ExtResource("7_2rcdj"), ExtResource("8_5dtqp"), ExtResource("9_sqt02"), ExtResource("10_rvbxc")],
+"Dirt": [ExtResource("11_b0q2n"), ExtResource("12_0msir"), ExtResource("13_vgk6e"), ExtResource("14_1ad06"), ExtResource("15_rhuns"), ExtResource("16_bop0u"), ExtResource("17_2rcdj")],
+"Grass": [ExtResource("18_5dtqp"), ExtResource("19_sqt02"), ExtResource("20_rvbxc"), ExtResource("21_le6pw"), ExtResource("22_dnp8v")],
+"Metal": [ExtResource("23_3lxap"), ExtResource("24_ufbyx"), ExtResource("25_oh5ir"), ExtResource("26_a7rc2"), ExtResource("27_mub4y")],
+"Sand": [ExtResource("28_flbgp"), ExtResource("29_16vbe"), ExtResource("30_wrb70"), ExtResource("31_5odot"), ExtResource("32_iyweb")],
+"Shallow Water": [ExtResource("33_dufso"), ExtResource("34_ymoku"), ExtResource("35_h821n"), ExtResource("36_qba01"), ExtResource("37_0m18m")],
+"Snow": [ExtResource("38_0swc1"), ExtResource("39_8hili"), ExtResource("40_5fm42"), ExtResource("41_iwmqf"), ExtResource("42_iy5s4"), ExtResource("43_podkv")],
+"Stone": [ExtResource("60_sftax"), ExtResource("61_m7jst"), ExtResource("62_615ci"), ExtResource("63_yq47h"), ExtResource("64_u4dwm"), ExtResource("65_jqoi2"), ExtResource("66_lxbo6"), ExtResource("67_181u6"), ExtResource("68_7widf"), ExtResource("69_qc14y"), ExtResource("70_ma50t")],
+"Tile": [ExtResource("44_y2xnb"), ExtResource("45_xn4gh"), ExtResource("46_vfgcy"), ExtResource("47_pqv25"), ExtResource("48_vjuth")],
+"Wood": [ExtResource("49_5t21c"), ExtResource("50_57igy"), ExtResource("51_c5dsn"), ExtResource("52_xg641"), ExtResource("53_5k2lr"), ExtResource("54_lmwtc"), ExtResource("55_i8jwo"), ExtResource("56_pemof"), ExtResource("57_y4xy7"), ExtResource("58_7pv8g"), ExtResource("59_653ad")]
+})
+metadata/_custom_type_script = "uid://i51us87oiobt"

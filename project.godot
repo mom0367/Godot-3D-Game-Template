@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="3D Game Template"
-config/tags=PackedStringArray("asset_repository")
+config/tags=PackedStringArray()
 run/main_scene="uid://xgs22y8bv2cw"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://ek0hwa3cvjpq"
@@ -138,3 +138,4 @@ renderer/rendering_method.mobile="gl_compatibility"
 lights_and_shadows/directional_shadow/size=8192
 lights_and_shadows/positional_shadow/atlas_size=8192
 lights_and_shadows/positional_shadow/atlas_size.mobile=4096
+                  
