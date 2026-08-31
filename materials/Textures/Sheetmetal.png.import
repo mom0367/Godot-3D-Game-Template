@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xu6f1xgtsqkl"
-path.s3tc="res://.godot/imported/Sheetmetal.png-11741babf134eb8640dd36e0feadc6a3.s3tc.ctex"
+path.s3tc="res://.godot/imported/sheetmetal.png-88485c0230d0e1372feadc4c2149e358.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://materials/Textures/Sheetmetal.png"
-dest_files=["res://.godot/imported/Sheetmetal.png-11741babf134eb8640dd36e0feadc6a3.s3tc.ctex"]
+source_file="res://materials/textures/sheetmetal.png"
+dest_files=["res://.godot/imported/sheetmetal.png-88485c0230d0e1372feadc4c2149e358.s3tc.ctex"]
 
 [params]
 
