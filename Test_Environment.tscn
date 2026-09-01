@@ -12,7 +12,7 @@
 [ext_resource type="Material" uid="uid://c0dqllv5tgutr" path="res://materials/material_resources/grid_blue.tres" id="10_j8q7s"]
 [ext_resource type="Material" uid="uid://dh6rgbeed2q8t" path="res://materials/material_resources/water.tres" id="11_gs3s8"]
 [ext_resource type="Script" uid="uid://b2okntvjj3ctj" path="res://extra_systems/force_pushers/Force_Area_Omnidirectional.gd" id="12_iom6o"]
-[ext_resource type="PackedScene" uid="uid://p8nowy1cujv1" path="res://player_controller/player_character.tscn" id="13_h2e74"]
+[ext_resource type="PackedScene" uid="uid://p8nowy1cujv1" path="res://character_controller/player_character.tscn" id="13_6h0c5"]
 [ext_resource type="PackedScene" uid="uid://bx5u3273kdyj0" path="res://extra_systems/interactor_system/interaction_ui.tscn" id="14_jpyyj"]
 [ext_resource type="PackedScene" uid="uid://ct8en3a6s08hw" path="res://extra_systems/interactor_system/interactable_example.tscn" id="15_hb5u0"]
 
@@ -61,7 +61,7 @@ albedo_color = Color(1, 1, 1, 0.554)
 [sub_resource type="BoxMesh" id="BoxMesh_c4gku"]
 material = SubResource("StandardMaterial3D_3835l")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wav8a"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5sb5"]
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 metallic_specular = 0.0
@@ -329,7 +329,7 @@ directional_shadow_max_distance = 400.0
 
 [node name="Players" type="Node" parent="." unique_id=282986476]
 
-[node name="Player_Character" parent="Players" unique_id=1452749356 instance=ExtResource("13_h2e74")]
+[node name="Player_Character" parent="Players" unique_id=1452749356 instance=ExtResource("13_6h0c5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Player_Spawner" type="MultiplayerSpawner" parent="." unique_id=1529968100]
@@ -339,4 +339,4 @@ spawn_path = NodePath("../Players")
 
 [node name="Interactable_Example" parent="." unique_id=1539230269 instance=ExtResource("15_hb5u0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 1.5, -1.25)
-material = SubResource("StandardMaterial3D_wav8a")
+material = SubResource("StandardMaterial3D_e5sb5")
