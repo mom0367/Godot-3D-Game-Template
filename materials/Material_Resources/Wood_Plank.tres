@@ -1,8 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dhp75iox4jbtw"]
 
-[ext_resource type="Texture2D" uid="uid://enqhjh81pjg7" path="res://materials/textures/plank.png" id="1_kf0lw"]
+[ext_resource type="Texture2D" uid="uid://fcpll87ucwus" path="res://materials/textures/wood_planks.png" id="1_0heo4"]
 
 [resource]
-albedo_texture = ExtResource("1_kf0lw")
+albedo_color = Color(0.39166957, 0.17907095, 0.083641745, 1)
+albedo_texture = ExtResource("1_0heo4")
 uv1_triplanar = true
 metadata/Material_Group = "Wood"

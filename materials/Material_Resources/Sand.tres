@@ -1,10 +1,12 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://jy3c3nu7wsqa"]
 
-[ext_resource type="Texture2D" uid="uid://bbct002awqgpc" path="res://materials/textures/carpet.png" id="1_x5s61"]
+[ext_resource type="Texture2D" uid="uid://dkn0ud2you3jt" path="res://materials/textures/snow.png" id="1_yl3ay"]
 
 [resource]
-albedo_color = Color(0.96100014, 0.9305988, 0.4610104, 1)
-albedo_texture = ExtResource("1_x5s61")
+albedo_color = Color(0.8777945, 0.8087775, 0.56771183, 1)
+albedo_texture = ExtResource("1_yl3ay")
 metallic_specular = 0.17
+roughness_texture = ExtResource("1_yl3ay")
+heightmap_enabled = true
 uv1_triplanar = true
 metadata/Material_Group = "Sand"

@@ -25,15 +25,12 @@ transparency = 1
 albedo_color = Color(0, 0.5568628, 0.96862745, 0.47058824)
 metadata/Material_Group = "Shallow Water"
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6frc2"]
-sky_top_color = Color(0.31567037, 0.78453845, 0.9322208, 1)
-sky_horizon_color = Color(0.4516955, 0.84670377, 0.96652037, 1)
-ground_bottom_color = Color(0.10754537, 0.35025185, 0.4801603, 1)
-ground_horizon_color = Color(0.3928013, 0.70346344, 0.8142568, 1)
-sun_angle_max = 38.24
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xcg13"]
+sky_top_color = Color(0.41718313, 0.75744295, 0.90203863, 1)
+sky_horizon_color = Color(0.6892224, 0.8233739, 0.9437561, 1)
 
 [sub_resource type="Sky" id="Sky_44ri0"]
-sky_material = SubResource("ProceduralSkyMaterial_6frc2")
+sky_material = SubResource("ProceduralSkyMaterial_xcg13")
 
 [sub_resource type="Environment" id="Environment_c6qvu"]
 background_mode = 2
@@ -61,7 +58,7 @@ albedo_color = Color(1, 1, 1, 0.554)
 [sub_resource type="BoxMesh" id="BoxMesh_c4gku"]
 material = SubResource("StandardMaterial3D_3835l")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5sb5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6h0c5"]
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 metallic_specular = 0.0
@@ -72,7 +69,7 @@ metallic_specular = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Floor" type="CSGBox3D" parent="Map" unique_id=1968738334]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5073013, 2.3841858e-07, 2.5002508)
 material_override = ExtResource("1_6h0c5")
 use_collision = true
 size = Vector3(140, 1, 140)
@@ -95,18 +92,13 @@ material = SubResource("StandardMaterial3D_deljx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 3)
 
 [node name="Wood" type="CSGBox3D" parent="Map/Material_Samples" unique_id=237773983]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, 2)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, 0.25, 2)
 material_override = ExtResource("2_e5sb5")
 use_collision = true
 size = Vector3(4, 0.5, 4)
 
-[node name="No_Material" type="CSGBox3D" parent="Map/Material_Samples" unique_id=230888798]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, 6)
-use_collision = true
-size = Vector3(4, 0.5, 4)
-
 [node name="Grass" type="CSGBox3D" parent="Map/Material_Samples" unique_id=1376540895]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.25, 2)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6, 0.25, 2)
 material_override = ExtResource("3_84ocs")
 use_collision = true
 size = Vector3(4, 0.5, 4)
@@ -339,4 +331,4 @@ spawn_path = NodePath("../Players")
 
 [node name="Interactable_Example" parent="." unique_id=1539230269 instance=ExtResource("15_hb5u0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 1.5, -1.25)
-material = SubResource("StandardMaterial3D_e5sb5")
+material = SubResource("StandardMaterial3D_6h0c5")

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xu6f1xgtsqkl"
-path.s3tc="res://.godot/imported/sheetmetal.png-88485c0230d0e1372feadc4c2149e358.s3tc.ctex"
+uid="uid://fcpll87ucwus"
+path.s3tc="res://.godot/imported/wood_planks.png-0ecc91cfcc5967c45fb49082b3b5f74a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://materials/textures/sheetmetal.png"
-dest_files=["res://.godot/imported/sheetmetal.png-88485c0230d0e1372feadc4c2149e358.s3tc.ctex"]
+source_file="res://materials/textures/wood_planks.png"
+dest_files=["res://.godot/imported/wood_planks.png-0ecc91cfcc5967c45fb49082b3b5f74a.s3tc.ctex"]
 
 [params]
 

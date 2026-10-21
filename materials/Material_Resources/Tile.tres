@@ -1,8 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://blv22y8y6uvqx"]
 
-[ext_resource type="Texture2D" uid="uid://djmgkxe2ffxpw" path="res://materials/textures/tile.png" id="1_41xlu"]
+[ext_resource type="Texture2D" uid="uid://dul04w3orc20a" path="res://materials/textures/tile.png" id="1_41xlu"]
 
 [resource]
+albedo_color = Color(0.82606, 0.82606006, 0.82606, 1)
 albedo_texture = ExtResource("1_41xlu")
 uv1_triplanar = true
 metadata/Material_Group = "Tile"

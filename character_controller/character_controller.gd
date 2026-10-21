@@ -10,11 +10,13 @@ extends CharacterBody3D
 @export var jump_allowed : bool = true
 @export var gravity_affected : bool = true
 @export var sprint_allowed : bool = true
-@export var crouch_allowed : bool = true
-@export var swimming_allowed : bool = true
-@export var sinks_in_water : bool = false
+@export var toggle_sprint : bool = false
+@export var noclip_allowed : bool = false
+
+
+
 ##Determines if the player can enter noclip mode
-@export var noclip_allowed : bool = true
+
 ##Determines if a player can stop their momentum by letting go of movement while midair 
 @export var midair_deceleration : bool = true
 ##If the player can strafe
@@ -23,8 +25,8 @@ extends CharacterBody3D
 @export var air_strafing_allowed : bool = true
 #If the player will automatically jump upon touching the floor while the jump input is held down
 @export var hold_jump : bool = false
-@export var toggle_sprint : bool = false
-@export var toggle_crouch : bool = false
+
+
 @export var invert_mouse : bool = false
 @export var mouse_lock : bool = true
 
@@ -34,16 +36,11 @@ extends CharacterBody3D
 @onready var sprinting : bool = false
 @onready var noclipping : bool = false
 @onready var floating : bool = false
-@onready var swimming : bool = false
-@onready var previous_swimming_state : bool = false
-@onready var crouching : bool = false
 
 @export_group("Attributes")
 @export var base_speed : float = 7.0
 @export var sprint_increase : float = 0.25
-@export var crouch_speed_decrease : float = 0.15
-@export var crouch_animation_time : float = 0.075
-@export var water_speed_decrease : float = 0.25
+
 #Speed multiplier used internally for things like sprinting, if you want to give the player boosts use the exported multiplier instead.
 @onready var base_speed_multiplier : float = 1.0
 #Speed modifier to be used externally, for things such as gear and items
@@ -71,6 +68,26 @@ extends CharacterBody3D
 
 signal jumped
 signal landed
+
+#region External Modules, remove the associated group here when removing the module
+##CROUCH MODULE
+@export_group("Crouching")
+@export var crouch_allowed : bool = true
+@export var toggle_crouch : bool = false
+@export var crouch_speed_decrease : float = 0.15
+@export var crouch_animation_time : float = 0.075
+
+@onready var crouching : bool = false
+
+##SWIM MODULE
+@export_group("Water")
+@export var swimming_allowed : bool = true
+@export var sinks_in_water : bool = false
+@export var water_speed_decrease : float = 0.25
+
+@onready var swimming : bool = false
+@onready var previous_swimming_state : bool = false
+#endregion
 
 #Used to connect to the input system, uses ui inputs as a fallback
 @export_group("Inputs")

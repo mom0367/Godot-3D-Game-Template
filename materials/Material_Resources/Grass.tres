@@ -1,9 +1,10 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://dbjrhs0bv22rq"]
 
-[ext_resource type="Texture2D" uid="uid://smo6og55lupr" path="res://materials/textures/grass.png" id="1_e5sso"]
+[ext_resource type="Texture2D" uid="uid://dkd7sleqv14p5" path="res://materials/textures/grass.png" id="1_pqd55"]
 
 [resource]
-albedo_texture = ExtResource("1_e5sso")
+albedo_color = Color(0.6868513, 0.96914417, 0.49061495, 1)
+albedo_texture = ExtResource("1_pqd55")
 metallic_specular = 0.17
 uv1_triplanar = true
 metadata/Material_Group = "Grass"

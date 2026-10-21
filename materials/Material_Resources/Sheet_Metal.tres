@@ -1,9 +1,15 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bbjng30mvm64"]
 
-[ext_resource type="Texture2D" uid="uid://xu6f1xgtsqkl" path="res://materials/textures/sheetmetal.png" id="1_7ipgq"]
+[ext_resource type="Texture2D" uid="uid://t6udh640eqwq" path="res://materials/textures/sheet_metal.png" id="1_ygoef"]
+[ext_resource type="Texture2D" uid="uid://b6n21bwyt81at" path="res://materials/textures/sheet_metal_roughness.png" id="2_2o0gy"]
 
 [resource]
-albedo_texture = ExtResource("1_7ipgq")
+albedo_texture = ExtResource("1_ygoef")
 metallic_specular = 0.0
+metallic_texture = ExtResource("2_2o0gy")
+metallic_texture_channel = 4
+roughness = 0.0
+roughness_texture = ExtResource("2_2o0gy")
+roughness_texture_channel = 4
 uv1_triplanar = true
 metadata/Material_Group = "Metal"
