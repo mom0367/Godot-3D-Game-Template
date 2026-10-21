@@ -7,6 +7,5 @@ albedo_color = Color(0.8777945, 0.8087775, 0.56771183, 1)
 albedo_texture = ExtResource("1_yl3ay")
 metallic_specular = 0.17
 roughness_texture = ExtResource("1_yl3ay")
-heightmap_enabled = true
 uv1_triplanar = true
 metadata/Material_Group = "Sand"
