@@ -11,10 +11,18 @@ metallic_specular = 0.0
 resource_name = "Interactable_Example"
 script/source = "extends CSGBox3D
 
+@onready var on : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Interactable3D.interacted.connect(func() -> void: material.albedo_color = Color(0.250, 0.65, 1.0, 1.0))
+	$Interactable3D.interacted.connect(func() -> void: 
+		if on == false:
+			material.albedo_color = Color(0.250, 0.65, 1.0, 1.0)
+			on = true
+		else:
+			material.albedo_color = Color()
+			on = false
+	)
 "
 
 [node name="Interactable_Example" type="CSGBox3D" unique_id=1539230269]
